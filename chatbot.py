@@ -199,7 +199,7 @@ def chat():
     print('Chatbot Janusz.')
     print('Komunikuj się z programem przy użyciu zdań w języku polskim.')
     print('Napisz słowo "wyjdź", aby zakończyć rozmowę.')
-    print('-----------------\)
+    print('-----------------')
     print('Dzień Dobry. Jestem Janusz. A ty, jak masz na imię?')
     chatbot.converse(quit='wyjdź')
 
