@@ -36,6 +36,22 @@ greetings = [
 
 sentences = [
     [
+        r"(.*)(zagramy|gramy)(.*)(papier|kamień|norzyce)(.*)",
+        [
+            "Ok, Papier, wygrałem",
+            "Ok, Norzyce, wygrałem",
+            "Ok, Kamień, wygrałem", 
+            "Nie chce z tobą grać..."
+        ],
+    ],
+    [
+        r"(.*)(orzeł czy reszka|rzuć monetą|reszka czy orzeł)(.*)",
+        [
+            "Orzeł.",
+            "Reszka."
+        ],
+    ],
+    [
         r"(.*)czuj(ę|e) si(ę|e) (.*)",
         [
             "Cieszę się, że czujesz się %4.",
@@ -243,6 +259,19 @@ questions = [
             "Tak właściwie to o ni%2.",
             "O ni%2."
         ],
+    ],
+    [
+        r"(.*)cię stworzy(ł|ło|ć)(.*)",
+        [
+            "Moimi stwórcami są Piotr Meller, Piotr Kopycki, Łukasz Jędyk i Maciej Sobkowiak."
+        ]
+    ],
+    [
+        r"(.*)mieszkasz(.*)",
+        [
+            "Znowu się budze w tej Polsce...",
+            "Jestem twoim sąsiadem."
+        ]
     ],
     [
         r"(.*)(kim|czym) jeste(ś|s)(.*)",
