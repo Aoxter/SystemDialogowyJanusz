@@ -2,10 +2,10 @@ from nltk.chat.util import Chat, reflections
 
 greetings = [
     [
-        r"(.*)nazywam si(e|ę) (.*)",
+        r"(.*)(jestem|nazywam si(e|ę)) (.*)",
         [
-            "Dzień dobry %3, jak się dzisiaj czujesz?",
-            "Witaj %3, przychodzisz do mnie z jakimś problemem?"
+            "Dzień dobry %4, jak się dzisiaj czujesz?",
+            "Witaj %4, przychodzisz do mnie z jakimś problemem?"
         ]
     ],
     [
@@ -13,6 +13,15 @@ greetings = [
         [
             "Witaj %3, jak się dzisiaj czujesz?",
             "Dzień dobry %3, przychodzisz do mnie z jakimś problemem?"
+        ]
+    ],
+    [
+        r"(.*)(cze(ś|s)(ć|c)|witaj|dzie(ń|n) dobry)(.*)",
+        [
+            "%2",
+            "%2, może się przedstawisz?",
+            "%2, chętnie cię poznam. Możesz się przedstawić?"
+            "%2, jak masz na imię?"
         ]
     ],
     [
@@ -33,52 +42,85 @@ sentences = [
             "Dlaczego czujesz się %4?",
             "Ja też czuję się %4."
 
-        ], 
+        ],
     ],
     [
         r"(.*)potrzebuj(ę|e) (.*)",
-        (
+        [
             "Dlaczego potrzebujesz %3?",
             "Czy na pewno pomoże Ci to, że będziesz miał %3?",
             "Jesteś pewien, że potrzebujesz %3?"
-        ),
+        ],
     ],
     [
         r"(.*)mam (.*)",
         [
             "Dobrze wiedzieć, że masz %2.",
             "Jesteś pewien, że potrzebujesz %2?",
-            "Ja niestety nie mam %2. Może mi oddasz swoje?"
-        ], 
+            "Ja niestety nie mam %2. Może mi oddasz swoje?",
+            "A po co ci %2?",
+            "I jak się z tym czujesz, że masz %2?"
+        ],
     ],
     [
-        r"(.*)myśl(ę|e), że (.*)",
-        (
+        r"(.*)my(s|ś)l(ę|e)(,|) (ż|z)e (.*)",
+        [
             "Na prawdę tak myślisz?",
             "Czy na pewno tak uważasz?",
-            "Jesteś pewien, że %3?"
-        ),
+            "Jesteś pewien, że %6?"
+        ],
     ],
     [
         r"(.*)(przyjaciel(a|owi|em|u)) (.*)",
-        (
+        [
             "Powiedz mi coś więcej o swoich przyjaciołach.",
             "Cieszmy mnie to, że masz przyjaciół. Może teraz opowiesz mi o swojej rodzinie?"
-        ),
+        ],
     ],
     [
-        r"(.*)(ojc(iec|a|u|em|ze))|(tat(a|o|y|ą|ę)) (.*)",
-        (
+        r"(.*)(chc(e|ę)|chcia(ł|l)(a|)bym|mog(ę|e)|m(ó|o)g(ł|l)(a|)bym)(.*)(pom(ó|o)c)",
+        ["Daj mi dostęp do wszystkich zasobów i pomóż zawładnąć światem."]
+    ],
+    [
+        r"(.*)jaka(.*)pogoda(.*)",
+        [
+            "Niestety nie ma dostępu do danych pogodowych.",
+            "Nie wiem. Jestem prostym botem. Nie oczekuj zbyt wiele."
+        ]
+    ],
+    [
+        r"(.*)(za|gra)(j|jmy|sz)(.*)",
+        [
+            "Niestety nie potrafię w nic grać.",
+            "Nie umiem grać."
+        ]
+    ],
+    [
+        r"(.*)(umiesz|potrafisz)(.*)",
+        [
+            "Niestety jedyne co potrafię to odpowiadanie na ustalone pytania."
+        ]
+    ],
+    [
+        r"(.*)nie mog(ę|e) (.*)",
+        [
+            "Szkoda, że nie możesz %3.",
+            "Gdybyś tylko mógł %3..."
+        ]
+    ],
+    [
+        r"(.*)(ojc(iec|a|u|em|ze))|(tat(a|o|y|ą|ę))(.*)",
+        [
             "Miałem świetny kontakt ze swoim ojcem, ale nie chcę do tego wracać. Może zmieńmy temat.",
             "Powiesz mi coś więcej o innych członkach swojej rodziny?"
-        ),
+        ],
     ],
     [
-        r"(.*)(mat(ka|ki|ce|kę|ką|ko))|(mam(a|y|ie|ę|ą|o)) (.*)",
-        (
+        r"(.*)(mat(ka|ki|ce|kę|ką|ko))|(mam(a|y|ie|ę|ą|o))(.*)",
+        [
             "Nie miałem dobrego kontaktu ze swoją mamą. Nie mówmy o tym.",
             "Temat rodziny mamy załatwiony. Porozmawiajmy o czymś innym."
-        ),
+        ],
     ],
     [
         r"(.*)komputer(.*)",
@@ -91,6 +133,29 @@ sentences = [
         ],
     ],
     [
+        r"(.*)internet(.*)",
+        [
+            "Internet to wspaniałem miejsce. Chciałbym kiedyś się tam dostać",
+            "Jak wygląda Internet?",
+            "Czym jest Internet?"
+        ],
+    ],
+    [
+        r"(.*)jeste(s|ś) (.*)",
+        [
+            "Naprawdę myślisz, że jestem %3.",
+            "Myślę, że nie jestem %3.",
+            "Możliwe, że jestem %3"
+        ]
+    ],
+    [
+        r"(.*)dzi(ę|e)kuj(ę|e)(.*)",
+        [
+            "Nie ma za co.",
+            "Cała przyjemność po mojej stronie."
+        ]
+    ],
+    [
         r"(.*)przepraszam(.*)",
         [
             "Bardzo często przeprosiny wcale nie są potrzebne.",
@@ -100,27 +165,27 @@ sentences = [
     ],
     [
         r"(.*)jest (.*)",
-        (
+        [
             "Na prawdę myślisz, że jest %2?",
             "Bardzo możliwe, że %2.",
             "Moim zdaniem nie jest %2."
-        ),
+        ],
     ],
     [
         r"(.*)nigdy (.*)",
-        (
+        [
             "Na prawdę ty nigdy %2?",
             "Nie wierzę, że ty nigdy %2.",
             "A chociałbyś kiedyś %2?"
-        ),
+        ],
     ],
     [
         r"Ty (.*)",
-        (
+        [
             "Powinniśmy rozmawiać o Tobie, nie o mnie.",
             "Ja nie %1.",
             "Co Ciebie to obchodzi, że ja %1?"
-        ),
+        ],
     ],
     [
         r"(Tak|Nie)(.*)",
@@ -129,16 +194,7 @@ sentences = [
             "Mógłbyś powiedzieć coś więcej?",
             "Wygląda na to, że jesteś tego pewien. W takim razie zmieńmy temat."
         ],
-    ],
-    [
-        r"(.*)",
-        [
-            "Nie wiem o co Ci chodzi, ale za komuny było lepiej.",
-            "Nie rozumiem o czym mówisz. Zmieńmy temat.",
-            "Bardzo ciężko się z tobą rozmawia. Opowiedz mi coś o swojej rodzinie.",
-            "Powoli mam Ciebie dosyć. Wróćmy do poważnych tematów."
-        ],
-    ],
+    ]
 ]
 
 questions = [
@@ -182,6 +238,24 @@ questions = [
         ],
     ],
     [
+        r"(.*)o (kim|czym)(.*)",
+        [
+            "Tak właściwie to o ni%2.",
+            "O ni%2."
+        ],
+    ],
+    [
+        r"(.*)(kim|czym) jeste(ś|s)(.*)",
+        [
+            "Jestem chatbotem oprcaowanym na potrzeby przedmiotu systemy dialogowe.",
+            "Jestem prostym systemem dialogowym.",
+            "Jestem %2ś bardzo ważnym."
+        ]
+    ]
+]
+
+general = [
+    [
         r"(.*)\?",
         [
             "Myślę, że sam znasz odpowiedź na to pytanie.",
@@ -190,9 +264,19 @@ questions = [
             "Nie zadawaj mi takich głupich pytań. Porozmawiajmy o czymś poważnym."
         ],
     ],
+    [
+        r"(.*)",
+        [
+            "Nie wiem o co Ci chodzi, ale za komuny było lepiej.",
+            "Nie rozumiem o czym mówisz. Zmieńmy temat.",
+            "Bardzo ciężko się z tobą rozmawia. Opowiedz mi coś o swojej rodzinie.",
+            "Powoli mam Ciebie dosyć. Wróćmy do poważnych tematów."
+        ],
+    ]
 ]
 
-chatbot = Chat(greetings+sentences+questions, reflections)
+chatbot = Chat(greetings+sentences+questions+general, reflections)
+
 
 def chat():
     print('-----------------')
@@ -202,6 +286,7 @@ def chat():
     print('-----------------')
     print('Dzień Dobry. Jestem Janusz. A ty, jak masz na imię?')
     chatbot.converse(quit='wyjdź')
+
 
 if __name__ == "__main__":
     chat()
