@@ -18,7 +18,7 @@ Zadanie 1: Umawianie spotkania
 
 *system:* Niestety, godzina ta jest już zajęta przez inne spotkanie, proponuję godzinę 14:00.
 
-*user:* Zgadzam się.
+*user:* Dobrze, może być godzina 14:00.
 
 *system:* Czy mam zapisać miejsce spotkania?
 
@@ -32,10 +32,10 @@ Zadanie 1: Umawianie spotkania
 
 *user:* Nie, nie trzeba.
 
-*system:* Proszę potwierdzić utworzenie spotkania:
-            Data:           Poniedziałek 29.03.2021 14:00-15:00
-            Miejsce:        Sala konferencyjna w biurze
-            Spotkanie z:    Jan Nowak - Prezes firmy ABC 
+*system:* Proszę potwierdzić utworzenie spotkania: <br>
+          Data:           Poniedziałek 29.03.2021 14:00-15:00 <br>
+          Miejsce:        Sala konferencyjna w biurze <br>
+          Spotkanie z:    Jan Nowak - Prezes firmy ABC <br>
 
 *user:* Zatwierdzam.
 
@@ -65,7 +65,7 @@ Zadanie 2: Edycja spotkania
 
 *user:* Nie, chciałbym jeszcze zmienić czas spotkania.
 
-*system:* Obecna czas spotkania to Poniedziałek 29.03.2021 14:00-15:00, jaki ma być nowy czas       spotkania?
+*system:* Obecna czas spotkania to Poniedziałek 29.03.2021 14:00-15:00, jaki ma być nowy czas spotkania?
 
 *user:* Niech zostanie bez zmian.
 
@@ -87,11 +87,11 @@ Zadanie 3: Odwołanie spotkania
 
 *user:* 29.03.2021 16:00
 
-*system:* Czy mam odwołąć poniższe spotkanie?
-            Data:           Poniedziałek 29.03.2021 16:00-17:15
-            Miejsce:        Dom
-            Spotkanie z:    Kacper (Brat)
-            Opis:           Zaplanowanie imprezy urodzinowej dla mamy
+*system:* Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? <br>
+            Data:           Poniedziałek 29.03.2021 16:00-17:15 <br>
+            Miejsce:        Dom <br>
+            Spotkanie z:    Kacper (Brat) <br>
+            Opis:           Zaplanowanie imprezy urodzinowej dla mamy <br>
 
 *user:* Tak.
 
@@ -105,16 +105,15 @@ Zadanie 4: Podgląd spotkań względem daty
 
 *user:* Dzień dobry, chciałbym sprawdzić jutrzejsze spotkania.
 
-*system:* Na jutro zaplanowano następujące spotkania:
-            Data:           Poniedziałek 29.03.2021 14:00-15:00
-            Miejsce:        Sala konferencyjna w biurze
-            Spotkanie z:    Jan Nowak - Prezes firmy ABC 
-            ------------------------------------------------------------------
-            Data:           Poniedziałek 29.03.2021 16:00-17:15
-            Miejsce:        Dom
-            Spotkanie z:    Kacper (Brat)
-            Opis:           Zaplanowanie imprezy urodzinowej dla mamy
-
+*system:* Na jutro zaplanowano następujące spotkania: <br>
+            Data:           Poniedziałek 29.03.2021 14:00-15:00 <br>
+            Miejsce:        Sala konferencyjna w biurze <br>
+            Spotkanie z:    Jan Nowak - Prezes firmy ABC <br>
+            ------------------------------------------------------------------ <br>
+            Data:           Poniedziałek 29.03.2021 16:00-17:15 <br>
+            Miejsce:        Dom <br>
+            Spotkanie z:    Kacper (Brat) <br>
+            Opis:           Zaplanowanie imprezy urodzinowej dla mamy <br>
 
 Zadanie 5: Podgląd spotkań względem umówionych osób
 --------------------------
@@ -123,69 +122,64 @@ Zadanie 5: Podgląd spotkań względem umówionych osób
 
 *user:* Dzień dobry, chciałbym sprawdzić spotkania z Janem Nowakiem - Prezesem firmy ABC.
 
-*system:* Z Janem Nowakiem - Prezesm firmy ABC umówione są następujące spotkania:
-            Data:           Poniedziałek 29.03.2021 14:00-15:00
-            Miejsce:        Sala konferencyjna w biurze
-            Spotkanie z:    Jan Nowak - Prezes firmy ABC 
-            ------------------------------------------------------------------
-            Data:           Czwartek 1.04.2021 12:00-14:00
-            Miejsce:        Firma ABC
-            Spotkanie z:    Jan Nowak - Prezes firmy ABC 
-            Opis:           Omówienie warunków współpracy firm w ramach projektu XYZ.
+*system:* Z Janem Nowakiem - Prezesm firmy ABC umówione są następujące spotkania: <br>
+            Data:           Poniedziałek 29.03.2021 14:00-15:00 <br>
+            Miejsce:        Sala konferencyjna w biurze <br>
+            Spotkanie z:    Jan Nowak - Prezes firmy ABC <br>
+            ------------------------------------------------------------------ <br>
+            Data:           Czwartek 1.04.2021 12:00-14:00 <br>
+            Miejsce:        Firma ABC <br>
+            Spotkanie z:    Jan Nowak - Prezes firmy ABC <br>
+            Opis:           Omówienie warunków współpracy firm w ramach projektu XYZ. <br>
 
 
-Zadanie 6: Podgląd spotkań względem kategorii
---------------------------
-
-
-
-Zadanie 7: Podgląd spotkań względem miejsca
+Zadanie 6: Podgląd spotkań względem miejsca
 --------------------------
 
 *system:* Witam w twoim prywatnym asystencie kalendarza spotkań.
 
 *user:* Dzień dobry, chciałbym sprawdzić spotkania w moim domu.
 
-*system:* W domu umówione są następujące spotkania:
-            Data:           Poniedziałek 29.03.2021 16:00-17:15
-            Miejsce:        Dom
-            Spotkanie z:    Kacper (Brat)
-            Opis:           Zaplanowanie imprezy urodzinowej dla mamy
-            ------------------------------------------------------------------
-            Data:           Sobota 10.04.2021 11:00-18:00
-            Miejsce:        Dom
-            Spotkanie z:    Rodzina
-            Opis:           Imprezy urodzinows dla mamy
+*system:* W twoim domu umówione są następujące spotkania: <br>
+            Data:           Poniedziałek 29.03.2021 16:00-17:15 <br>
+            Miejsce:        Dom <br>
+            Spotkanie z:    Kacper (Brat) <br>
+            Opis:           Zaplanowanie imprezy urodzinowej dla mamy <br>
+            ------------------------------------------------------------------ <br>
+            Data:           Sobota 10.04.2021 11:00-18:00 <br>
+            Miejsce:        Dom <br>
+            Spotkanie z:    Rodzina <br>
+            Opis:           Imprezy urodzinowa dla mamy <br>
 
 
-Zadanie 8: Podgląd najbliższych spotkań
+Zadanie 7: Podgląd najbliższych spotkań
 --------------------------
 
 *system:* Witam w twoim prywatnym asystencie kalendarza spotkań.
 
 *user:* Dzień dobry, chciałbym sprawdzić najbliższe spotkania.
 
-*system:* Najbliższe spotkanie to:
-            Data:           Niedziela 28.03.2021 19:00
-            Miejsce:        Brak
-            Spotkanie z:    Marek
-            Opis:           Spotkanie towarzyskie
-          Kolejne spotkanie to:
-            Data:           Poniedziałek 29.03.2021 14:00-15:00
-            Miejsce:        Sala konferencyjna w biurze
-            Spotkanie z:    Jan Nowak - Prezes firmy ABC 
+*system:* Najbliższe spotkanie to: <br>
+            Data:           Niedziela 28.03.2021 19:00 <br>
+            Miejsce:        Brak <br>
+            Spotkanie z:    Marek <br>
+            Opis:           Spotkanie towarzyskie <br>
+          Kolejne spotkanie to: <br>
+            Data:           Poniedziałek 29.03.2021 14:00-15:00 <br>
+            Miejsce:        Sala konferencyjna w biurze <br>
+            Spotkanie z:    Jan Nowak - Prezes firmy ABC <br>
             
-Zadanie 9: Podgląd wolnych terminow
+Zadanie 8: Podgląd wolnych terminow
 --------------------------
 
 *system:* Witam w twoim prywatnym asystencie kalendarza spotkań.
 
 *user:* Dzień dobry, chciałbym sprawdzić najbliższe wolne terminy.
 
-*system:* Najbliższe wolne terminy to:
-            Niedziela 28.03.2021:
-                12:00-19:00
-            Poniedziałek 29.03.2021:
-                00:00-14:00
-                15:00-16:00
-                17:15-24:00
+*system:* Najbliższe wolne terminy to: <br>
+            Niedziela 28.03.2021: <br>
+              - 12:00-19:00 <br>
+            Poniedziałek 29.03.2021: <br>
+              - 00:00-14:00 <br>
+              - 15:00-16:00 <br>
+              - 17:15-24:00 <br>
