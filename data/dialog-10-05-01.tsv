@@ -1,0 +1,18 @@
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
+user	Chciałbym sprawdzić moje spotkania w piątek
+system	Na piątek 02.04.2021 nie masz zaplanywanych żadnych spotkań.
+user	proszę wpisać na 02.04.2021 o godzinie 19:00: Wyjście do kina ze znajomą
+system	Ile będzie trwało to spotkanie?
+user	2 godziny
+system	Spotkanie zostało dodane: Data: Piątek 02.04.2021 19:00-21:00 Miejsce: kino Z: znajoma Opis: wyjście do kina
+user	Pomyliłem się podczas podawania godziny. Chciałbym przełożyć to spotkanie na 20:00 do 22:00
+system	Spotkanie zostało zmienione: Data: Piątek 02.04.2021 20:00-22:00 Miejsce: kino Z: znajoma Opis: wyjście do kina
+user	Dziękuję
+system	Czy mogę jeszcze Ci w czymś pomóc?
+user	ile będę miał dni bez zaplanowanych spotkań w przyszłym miesiącu
+system	Dni bez zaplanowanych spotkań w przyszłym miesiącu: 29
+user	Dziękuję za informację
+system	Czy mogę jeszcze w czymś pomóc?
+user	To wszystko. Dziękuję
+system	Do widzenia, życzę miłego dnia.
+	

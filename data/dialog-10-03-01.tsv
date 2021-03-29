@@ -1,0 +1,17 @@
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
+user	Chciałbym zapisać spotkanie
+system	Proszę podać dzień, na jaki mam umówić spotkanie.
+user	08.04.2021
+system	Proszę o podanie godziny i czasu trwania spotkania.
+user	17:00 - 19:00
+system	Jakie będzie miejsce tego spotkania?
+user	Kawiarnia MCafe przy ulicy Grunwaldzkiej
+system	Z jaką osobą będzie to spotkanie?
+user	Sylwia Kowalska
+system	Czy mam dodać opis do spotkania?
+user	tak
+system	Jaki ma być opis spotkania?
+user	Intensywne rozmowy o przyrodzie przy Yerbie
+system	Spotkanie zostało dodane: Data: Czwartek 08.04.2021 17:00-19:00 Miejsce: Kawiarnia MCafe przy ulicy Grunwaldzkiej Z: Sylwia Kowalska Opis: Intensywne rozmowy o przyrodzie przy Yerbie
+user	Ok, koniec zapisu
+system	Do widzenia. Życzę miłego dnia.

@@ -1,0 +1,27 @@
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
+user	Jakie mam spotkania 31 marca?
+system	Nie masz żadnych spotkań 31 marca. Czy chciałbyć umówić spotkanie na ten dzień?
+user	Nie. A jakie spotkania mam jutro?
+system	Na jutro masz zaplanowane następujące spotkania: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	Chciałbym odwołać to spotkanie
+system	Czy jesteś pewien, że chcesz odwołać to spotkanie?
+user	Tak
+system	Spotkanie zostało odwołane. Czy mogę w czymś jeszcze pomóc?
+user	Chciałbym zaplanować nowe spotkanie na miejsce tego odwołanego
+system	Gdzie będzie to spotkanie?
+user	bez miejsca
+system	Z kim będzie to spotkanie?
+user	Jan Kowalski
+system	Spotkanie zostało dodane do kalendarza: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: brak Z: Jan Kowalski
+user	Chciałbym jeszcze dodać nową osobę do tego spotkania
+system	Kogo dodać do tego spotkania?
+user	Jan Nowak
+system	Uczestnik spotkania został dodany: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: brak Z: Jan Kowalski i Jan Nowak
+user	A jakie mam wolne terminy jutro?
+system	Dostępne terminy jutro: 00:00-10:00 12:00-14:00 15:30-24:00
+user	Kiedy mam spotkanie z Janem Nowakiem?
+system	Spotkania z Janem Nowakiem: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: brak Z: Jan Kowalski i Jan Nowak
+user	Chciałbym usunąć Jana Kowalskiego z tego spotkania
+system	Jan Kowalski został usunięty ze spotkania: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: brak Z: Jan Nowak
+user	To by było wszystko na teraz
+system	Do widzenia. Życzę miłego dnia.

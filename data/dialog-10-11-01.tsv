@@ -1,0 +1,13 @@
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
+user	Chciałbym przesunąć spotkanie
+system	Jakie spotkanie chcesz przesunąć?
+user	Dzisiejsze o godzinie 20:00
+system	Na kiedy chcesz przesunąć to spotkanie? Data: Poniedziałek 29.03.2021 20:00-20:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	na środę o godzinie 19:00, proszę też zmienić miejsce na Restauracja ABC
+system	Spotkanie zostało zmienione: Data: Środa 31.03.2021 19:00-20:30 Miejsce: Restauracja ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	proszę też zmienić czas trwania na 1 godzinę
+system	Spotkanie zostało zmienione: Data: Środa 31.03.2021 19:00-20:00 Miejsce: Restauracja ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	Dziękuje
+system	Czy mogę jeszcze w czymś pomóc?
+user	To wszystko
+system	Do widzenia. Życzę miłego dnia.

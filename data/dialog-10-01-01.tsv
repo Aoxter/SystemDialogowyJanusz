@@ -1,0 +1,7 @@
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
+user	proszę o wyświetlenie jutrzejszego kalendarza
+system	Jutrzejsze spotkania: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Wtorek 30.03.2021 18:00-19:30 Miejsce: Firma ABC Spotkanie z: Janusz Kowalski
+user	Dodaj pozycję jutro na 16-17.30: Lunch z księgową w miejscu: Cafe Teria
+system	Spotkanie zostało dodane: Data: Wtorek 16:00-17:30 Miejsce: Cafe Teria Spotkanie z: księgowa Opis: lunch
+user	dziękuje to wszystko
+system	Dziękuję. Do widzenia.
