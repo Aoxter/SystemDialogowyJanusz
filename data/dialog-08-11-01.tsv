@@ -1,0 +1,19 @@
+﻿user	cześć operatorze
+system	Cześć, witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Chciałbym umówić nowe spotkanie
+system	Proszę podać dzień na jaki mam umówić spotkanie.
+user	jutro
+system	Proszę podać godzinę i długość spotkania.
+user	Godzina 18:30, czas trwania 2 godziny
+system	Niestety, godzina ta jest już zajęta przez inne spotkanie, proponuję godzinę 19:00.
+user	Akceptuje i proszę zmienić czas trwania na 1,5h
+system	Czy mam zapisać miejsce spotkania?
+user	Tak
+system	Gdzie ma się odbyć spotkanie?
+user	Restauracja ABC
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
+user	tak, Jan Kowalski
+system	Czy mam dodać opis do spotkania?
+user	Nie, Dziękuję
+system	Proszę potwierdzić utworzenie spotkania: Data: Wtorek 30.03.2021 19:00-20:30 Miejsce: Restauracja ABC Spotkanie z: Jan Kowalski
+user	Dziękuję

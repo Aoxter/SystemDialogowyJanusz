@@ -1,0 +1,21 @@
+﻿user	Dzień dobry!
+system	Dzień dobry, witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Proszę o rozpiskęspotkań na następny tydzień
+system	Na następny tydzień zaplanowano następujące spotkania:
+system	Data: Czwartek 08.03.2021 13:00-13:30 Miejsce: Urząd Miasta Spotkanie z: Brak Opis: Złożenie wniosku w urzędzie
+system	Data: Czwartek 08.03.2021 18:00-18:30 Miejsce: Sklep spożywczy Spotkanie z: Brak Opis: Zakupy
+user	Chciałabym dodać spotkanie do kalendarza.
+system	Proszę podać dzień na jaki mam umówić spotkanie.
+user	Czwartek
+system	Proszę podać godzinę i długość spotkania.
+user	Spotkanie rozpocznie się o 12:00 i będzie trwało 2 godziny.
+system	Czy mam zapisać miejsce spotkania?
+user	Restauracja w hotelu Anderisa.
+system	Czy mam zapisać nazwisko osoby, której dotyczy to spotkanie?
+user	Hanna Kowalska.
+system	Czy mam dodać opis do spotkania?
+user	Nie.
+system	Proszę potwierdzić utworzenie spotkania: Data: Czwartek 1.04.2021 12:00-14:00 Miejsce: Restauracja w hotelu Anderisa Spotkanie z: Hanna Kowalska.
+user	Potwierdzam.
+system	Spotkanie zostało pomyślnie dodane do kalendarza.
+user	Dziękuje

@@ -1,0 +1,26 @@
+﻿user	Hej 
+system	Hej, witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Jakie mam spotkania jutro?
+system	Na jutro zaplanowano następujące spotkania: 
+system	Data: Wtorek 30.03.2021 10:00-11:30 Miejsce: Platforma MS Teams Spotkanie z: Marek Kubis Opis: Odrabianie zajęć z Systemów Dialogowych
+user	Czy moge przesunąć to spotkanie?
+system	Obecny czas spotkania to: Wtorek 30.03.2021 10:00-11:30, jaki ma być nowy czas spotkania?
+user	Ten sam dzień ale o 13 początek
+system	Czas został pomyślnie zmieniony
+user	Chciałbym dodać nowe spotkanie 
+system	Proszę podać dzień na jaki mam umówić spotkanie.
+user	pierwszy kwietnia
+system	Proszę podać godzinę i długość spotkania.
+user	18:30 bez ustalonego czasu spotkania
+system	Czy mam zapisać miejsce spotkania?
+user	nie
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
+user	nie
+system	Czy mam dodać opis do spotkania?
+user	Tak
+user	Spotkanie rekreacyjne
+system	Proszę potwierdzić utworzenie spotkania: Data: Czwartek 1.04.2021 18:30 Miejsce: Brak Spotkanie z: Brak Opis: Spotkanie rekreacyjne
+user	Tak zgadza się
+system	Spotkanie zostało pomyślnie dodane do kalendarza.
+user	To by było wszystko 
+system	Miłego dnia
