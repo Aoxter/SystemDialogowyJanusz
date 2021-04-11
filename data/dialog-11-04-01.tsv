@@ -1,0 +1,10 @@
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Proszę stworzyć w moim kalendarzu spotkanie online 24.04.2021 o godzinie 17.00.
+system	Czy chcesz dodać uczestników spotkania?
+user	Tak, proszę zaprosić Jan Nowak, Grażyna Kowalska i Hubert Noga.
+system	Proszę potwierdzić utworzenie spotkania:\nData: Sobota 24.04.2021 17:00\nMiejsce: spotkanie online\nSpotkanie z: Jan Nowak, Grażyna Kowalska, Hubert Noga
+user	Proszę dodać opis "Omówienie projektu XYZ" oraz dodać powiadomienie 30 min przed spotkaniem.
+system	Proszę potwierdzić utworzenie spotkania:\nData: Sobota 24.04.2021 17:00\nMiejsce: spotkanie online\nSpotkanie z: Jan Nowak, Grażyna Kowalska, Hubert Noga\nOpis: Omówienie projektu XYZ\nPrzypomnienie: 30 min
+user	Tak, potwierdzam, dziękuję.
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
+user	Nie, dziękuję. To wszystko.

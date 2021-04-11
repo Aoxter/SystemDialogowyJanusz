@@ -1,0 +1,12 @@
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Jakie spotkania mam zaplanowane w najbliższy czwartek?
+system	Brak zaplanowanych spotkań na dzień 01.04.2021
+user	To chciałbym zaplanować spotkanie tego dnia o godzinie 17.
+system	Czy mam zapisać miejsce spotkania?
+user	Tak, Centrum Handlowe ABC
+system	Czy mam z zapisać z kim ma być spotkanie?
+user	Tak, spotkanie będzie z Januszem Kowalskim
+system	Proszę potwierdzić utworzenie spotkania:\nData: Czwartek 01.01.2021 17:00-18:00\nMiejsce: Centrum Handlowe ABC\nSpotkanie z: Janusz Kowalski
+user	Potwierdzam
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
+user	Dziękuję, to wszystko.

@@ -1,0 +1,21 @@
+user	Dzień dobry, chciałbym sprawdzić dzisiejsze spotkania
+system	Data: Wtorek 30.03.2021 12:00-15:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski\n--------------------------------\nData: Wtorek 30.03.2021 19:00-20:30\nMiejsce: Firma ABC\nSpotkanie z: Adam Nowak
+user	Chciałbym przełożyć spotkanie z 12:00
+system	Na jaki dzień chciałbyś przełożyć to spotkanie?
+user	Na środę na 13:00
+system	Proszę potwierdzić zmianę spotkania:\nData: Środa 31.03.2021 13:00-16:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski
+user	Potwierdzam.
+system	Spotkanie zostało zmienione. Czy mogę pomóc w czymś jeszcze?
+user	Tak, chciałbym umówić nowe spotkanie
+system 	Na jaki dzień chciałbyś umówić nowe spotkanie?
+user	Na wtorek
+system	Proszę podać godzinę spotkania.
+user	12:45
+system	Czy chcesz podać miejsce spotkania?
+user	tak, gabinet dentystyczny SuperDent
+system	Czy chciałbyś dodać uczestników spotkania?
+user	tak, doktor Krzysztof Ząb
+system	Proszę potwierdzić utworzenie spotkania:\nData: Wtorek 30.03.2021 12:45-13:45\nMiejsce: gabinet dentystyczny SuperDent\nSpotkanie z: doktor Krzysztof Ząb
+user	Zatwierdzam
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
+user	To będzie wszystko

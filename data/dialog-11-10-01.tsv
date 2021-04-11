@@ -1,0 +1,12 @@
+user	Cześć
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Proszę dodać spotkanie na dziś na godzinę 9 w parku Cytadela
+system	Czy chcesz podać czas trwania spotkania?
+user	Nie, proszę dopisać opis: Opis .....
+system	Czy chcesz dodać z kim ma być spotkanie?
+user	Nie
+system	Proszę potwierdzić utworzenie spotkania:\nData: Wtorek 30.03.2021 09:00\nMiejsce: Cytadela\nOpis: Opis .....
+user	Tak
+user	zgadza się
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
+user	Nie, dziękuję za rozmowę

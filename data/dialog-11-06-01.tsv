@@ -1,0 +1,14 @@
+user	Dzień dobry
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu
+system	Data: Wtorek 30.03.2021 19:00-20:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski\n--------------------------------\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Firma ABC\nSpotkanie z: Adam Nowak
+user	Chciałbym odwołać spotkanie i wjego miejsce wpisać nowe
+system	Jakie spotkanie chcesz odwołać?
+user	Spotkanie z Adam Nowak
+system	Spotkanie zostało odwołane. Proszę podać szczegóły nowego spotkania.
+user	Spotkanie z Jan Kowalski
+user	Restauracja xyz
+system	Proszę potwierdzić utworzenie spotkania:\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Restauracja xyz\nSpotkanie z: Jan Kowalski
+user	Potwierdzam
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
+user	To wszystko, dziękuję
