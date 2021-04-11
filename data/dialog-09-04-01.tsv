@@ -1,0 +1,15 @@
+user    Chciałbym umówić spotkanie dzisiaj o godzinie 17.00
+system	Niestety, godzina ta jest już zajęta przez inne spotkanie, proponuję godzinę 18:00.
+user	Ok, może być godzina 18
+system	Proszę podać długość spotkania.
+user	45 minut
+system	Czy mam zapisać miejsce spotkania?
+user	Tak, proszę dodać restaurację Bankcook w Poznaniu jako miejsce spotkania.
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
+user	Tak, proszę dodać Jan Nowak do spotkania oraz wysłać mu powiadomienie o zaproszeniu.
+system	Czy mam dodać opis do spotkania?
+user	Tak, opis to "Omówienie zakupu akcji firmy GameStop".
+system	Proszę potwierdzić utworzenie spotkania: Data: Wtorek 30.03.2021 18:00-18:45 Miejsce: Bankcook w Poznaniu Spotkanie z: Jan Nowak Opis: Omówienie zakupu akcji firmy GameStop
+user	Zgadza się, Proszę również wysłać mi powiadomienie 2 godziny przed spotkaniem.
+system  Powiadomienie zostanie wysłane 2 godziny przed spotkaniem.
+user    Dziękuję!

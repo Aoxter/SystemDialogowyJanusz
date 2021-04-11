@@ -1,0 +1,10 @@
+user    Cześć
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Czy mam jakieś zaplanowane spotkania?
+system	Najbliższe spotkanie to: Data: Piątek 02.04.2021 19:00 Miejsce: Brak Spotkanie z: Marek Opis: Spotkanie towarzyskie
+system  Kolejne spotkanie to: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	Chciałbym usunać drugie spotkanie.
+system	Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+user	Tak. Chciałbym je przesunąć na za tydzień
+system	Czas został zmieniony, czy to wszystkie edycje?
+user	Tak. Dziękuję za pomoc : )

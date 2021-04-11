@@ -1,0 +1,19 @@
+user    Cześć.
+system	Witam w twoim prywatnym asystencie kalendarza spotkań. Proszę podać dzień na jaki mam umówić spotkanie.
+user	Chciałbym utworzyć nowe spotkanie.
+system	Proszę podać dzień na jaki mam umówić spotkanie.
+user    Najbliższy poniedziałek.
+system  Proszę podać godzinę i długość spotkania.
+user	Spotkanie będzie w godzinach 16:30-19:00
+system	Czy mam zapisać miejsce spotkania?
+user	Miejsce spotkania to Kawiarnia JKL
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
+user	Spotkanie będzie z Janem Nowakiem
+system	Czy mam dodać opis do spotkania?
+user	Tak. Spotkanie będzie dotyczyło omówienia strategii biznesowej.
+system	Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 05.04.2021 16:30-19:00 Miejsce: Kawiarnia JKL Spotkanie z: Jan Nowak Opis: Omówienie strategii biznesowej
+user	Potwierdzam.
+system  Spotkanie zostało pomyślnie dodane do kalendarza.
+user    Czy mam jakieś spotkania w najbliższy piątek?
+system  Na piątek zaplanowano następujące spotkania: Data: Poniedziałek 29.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+user    Dziękuję, to wszystko.

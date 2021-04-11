@@ -1,0 +1,23 @@
+user    Dzień dobry
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.
+user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu
+system	Na ten tydzień zaplanowano następujące spotkania: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+system  Oraz: Data: Piątek 02.04.2021 16:00-17:15 Miejsce: Dom Spotkanie z: Kacper (Brat) Opis: Zaplanowanie imprezy urodzinowej dla mamy
+user	Chciałbym dodać spotkanie do kalendarza
+system  Proszę podać dzień na jaki mam umówić spotkanie.
+user    12.04.2021
+system	Proszę podać godzinę i długość spotkania.
+user	18:00 - 2 godziny
+system	Czy mam zapisać miejsce spotkania?
+user	Tak
+user    restauracja xyz
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
+user	nie
+system	Czy mam dodać opis do spotkania?
+user    nie
+system  Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 12.04.2021 18:00-20:00 Miejsce: restauracja xyz
+user	Spotkanie jednak będzie trwało 4 godziny
+system  Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 12.04.2021 18:00-22:00 Miejsce: restauracja xyz
+user	Potwierdzam
+system  Spotkanie zostało pomyślnie dodane do kalendarza.
+user    Dziękuję
