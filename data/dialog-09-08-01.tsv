@@ -1,4 +1,4 @@
-user    Dzień dobry, chciałbym umówić spotkanie
+user	Dzień dobry, chciałbym umówić spotkanie
 system	Witam w twoim prywatnym asystencie kalendarza spotkań. Proszę podać dzień na jaki mam umówić spotkanie.
 user	12 kwietnia
 system	Proszę podać godzinę i długość spotkania.
@@ -11,4 +11,4 @@ system	Czy mam dodać opis do spotkania?
 user	tak, Spotkanie z kierownikiem zespołu w sprawie prac projektowych
 system	Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 12.04.2021 9:00-12:00 Spotkanie z: Adam Nowak Opis: Spotkanie z kierownikiem zespołu w sprawie prac projektowych
 user	potwierdzam
-system  Spotkanie zostało pomyślnie dodane do kalendarza.
+system	Spotkanie zostało pomyślnie dodane do kalendarza.
