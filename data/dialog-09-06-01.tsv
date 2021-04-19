@@ -1,7 +1,8 @@
-user	Dzień dobry
-system	Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu
-system	Na ten tydzień zaplanowano następujące spotkania: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
+Interlocutor	Text	Acts
+user	Dzień dobry	(greeting())
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.	(greeting())
+user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu	request(upcoming_meetings(date=najbliższy tydzień))
+system	Na ten tydzień zaplanowano następujące spotkania: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC	(inform(
 system	Oraz: Data: Piątek 02.04.2021 16:00-17:15 Miejsce: Dom Spotkanie z: Kacper (Brat) Opis: Zaplanowanie imprezy urodzinowej dla mamy
 user	Chciałbym dodać spotkanie do kalendarza
 system	Proszę podać dzień na jaki mam umówić spotkanie.
