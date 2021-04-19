@@ -1,10 +1,11 @@
-user	Cześć
-system	Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Czy mam jakieś zaplanowane spotkania?
-system	Najbliższe spotkanie to: Data: Piątek 02.04.2021 19:00 Miejsce: Brak Spotkanie z: Marek Opis: Spotkanie towarzyskie
-system	Kolejne spotkanie to: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
-user	Chciałbym usunać drugie spotkanie.
-system	Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC
-user	Tak. Chciałbym je przesunąć na za tydzień
-system	Czas został zmieniony, czy to wszystkie edycje?
-user	Tak. Dziękuję za pomoc : )
+Interlocutor	Text	Acts
+user	Cześć	hello()
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Czy mam jakieś zaplanowane spotkania?	request(meeting list())
+system	Najbliższe spotkanie to: Data: Piątek 02.04.2021 19:00 Miejsce: Brak Spotkanie z: Marek Opis: Spotkanie towarzyskie	inform(meeting list())
+system	Kolejne spotkanie to: Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC	inform(meeting list())
+user	Chciałbym usunać drugie spotkanie.	request(delete meeting)
+system	Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? Data: Środa 31.03.2021 14:00-15:00 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC	confirm-domain()
+user	Tak. Chciałbym je przesunąć na za tydzień	negate()&request(update meeting(date=następny tydzień)
+system	Czas został zmieniony, czy to wszystkie edycje?	confirm()
+user	Tak. Dziękuję za pomoc : )	bye()
