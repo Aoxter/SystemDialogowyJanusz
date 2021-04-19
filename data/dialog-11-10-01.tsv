@@ -1,12 +1,12 @@
-user	Cześć
-system	Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Proszę dodać spotkanie na dziś na godzinę 9 w parku Cytadela
-system	Czy chcesz podać czas trwania spotkania?
-user	Nie, proszę dopisać opis: Opis .....
-system	Czy chcesz dodać z kim ma być spotkanie?
-user	Nie
-system	Proszę potwierdzić utworzenie spotkania:\nData: Wtorek 30.03.2021 09:00\nMiejsce: Cytadela\nOpis: Opis .....
-user	Tak
-user	zgadza się
-system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
-user	Nie, dziękuję za rozmowę
+user	Cześć	welcomemsg()
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Proszę dodać spotkanie na dziś na godzinę 9 w parku Cytadela	request(create_meeting(date=dzisiaj 9:00, place=park Cytadela))
+system	Czy chcesz podać czas trwania spotkania?	request(create_meeting_details(duration))
+user	Nie, proszę dopisać opis: Opis .....	negate() && inform(description=Opis .....)
+system	Czy chcesz dodać z kim ma być spotkanie?	request(create_meeting_details(participants))
+user	Nie	negate()
+system	Proszę potwierdzić utworzenie spotkania:\nData: Wtorek 30.03.2021 09:00\nMiejsce: Cytadela\nOpis: Opis .....	confirm-domain()
+user	Tak	confirm()
+user	zgadza się	confirm()
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?	confirm() && request(action)
+user	Nie, dziękuję za rozmowę	bye()

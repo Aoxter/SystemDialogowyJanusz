@@ -1,14 +1,14 @@
-user	Dzień dobry
-system	Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu
-system	Data: Wtorek 30.03.2021 19:00-20:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski\n--------------------------------\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Firma ABC\nSpotkanie z: Adam Nowak
-user	Chciałbym odwołać spotkanie i wjego miejsce wpisać nowe
-system	Jakie spotkanie chcesz odwołać?
-user	Spotkanie z Adam Nowak
-system	Spotkanie zostało odwołane. Proszę podać szczegóły nowego spotkania.
-user	Spotkanie z Jan Kowalski
-user	Restauracja xyz
-system	Proszę potwierdzić utworzenie spotkania:\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Restauracja xyz\nSpotkanie z: Jan Kowalski
-user	Potwierdzam
-system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?
-user	To wszystko, dziękuję
+user	Dzień dobry	welcomemsg()
+system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu	request(view_meetings(date=nabliższy tydzień))
+system	Data: Wtorek 30.03.2021 19:00-20:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski\n--------------------------------\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Firma ABC\nSpotkanie z: Adam Nowak	meeting_list(date=najbliższy tydzień)
+user	Chciałbym odwołać spotkanie i wjego miejsce wpisać nowe	request(cancel_meeting && create meeting)
+system	Jakie spotkanie chcesz odwołać?	request(cancel_meeting_details)
+user	Spotkanie z Adam Nowak	inform(participants=['Adam Nowak'])
+system	Spotkanie zostało odwołane. Proszę podać szczegóły nowego spotkania.	confirm() && request(new_meeting_details)
+user	Spotkanie z Jan Kowalski	inform(participants=['Jan Kowalski'])
+user	Restauracja xyz	inform(place='Restauracja xyz')
+system	Proszę potwierdzić utworzenie spotkania:\nData: Środa 31.03.2021 12:00-15:30\nMiejsce: Restauracja xyz\nSpotkanie z: Jan Kowalski	confirm-domain()
+user	Potwierdzam	confirm()
+system	Spotkanie zostało dodane do kalendarza. Czy mogę pomóc w czymś jeszcze?	confirm() && request(action)
+user	To wszystko, dziękuję	bye()
