@@ -1,13 +1,13 @@
-﻿user	Dzień dobry
-system	Dzień dobry, witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Chciałbym anulować spotkanie
-system	Proszę podać datę i godzinę spotkania do odwołania.
-user	Spotkanie o 19:00 w piątek
-system	Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? Data: Piątek 2.04.2021 19:00-20:00 Miejsce: Gabinet Dentystyczny MegaDent Spotkanie z: doktor Emilia Ząb Opis: Wizyta u dentysty
-user	Tak
-system	Spotkanie zostało pomyślnie odwołane.
-user	Proszę wpisać nowe spotkanie na ten termin: Wyjście do Kina z Tomkiem
-system	Proszę potwierdzić utworzenie spotkania: Data: Piątek 2.04.2021 19:00-20:00 Miejsce: Kino Spotkanie z: Tomek Opis: Wyjście do Kina
-user	Tak, zgadza się
-system	Spotkanie zostało pomyślnie dodane do kalendarza.
-user	Dziękuję
+﻿user	Dzień dobry	hello()
+system	Dzień dobry, witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Chciałbym anulować spotkanie	request(delete meeting)
+system	Proszę podać datę i godzinę spotkania do odwołania.	request(date, time)
+user	Spotkanie o 19:00 w piątek	inform(date=next friday, time=19:00)
+system	Czy jesteś pewien, że chcesz odwołać poniższe spotkanie? Data: Piątek 2.04.2021 19:00-20:00 Miejsce: Gabinet Dentystyczny MegaDent Spotkanie z: doktor Emilia Ząb Opis: Wizyta u dentysty	confirm-domain()
+user	Tak	confirm()
+system	Spotkanie zostało pomyślnie odwołane.	inform(delete meeting)
+user	Proszę wpisać nowe spotkanie na ten termin: Wyjście do Kina z Tomkiem	request(create meeting)
+system	Proszę potwierdzić utworzenie spotkania: Data: Piątek 2.04.2021 19:00-20:00 Miejsce: Kino Spotkanie z: Tomek Opis: Wyjście do Kina	confirm-domain()
+user	Tak, zgadza się	confirm()
+system	Spotkanie zostało pomyślnie dodane do kalendarza.	inform(create meeting)
+user	Dziękuję	bye()

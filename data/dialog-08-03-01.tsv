@@ -1,18 +1,18 @@
-﻿user	Chciałbym zapisać spotkanie
-system	Proszę podać dzień na jaki mam zapisać spotkanie.
-user	05.04.2021
-system	Proszę podać godzinę i długość spotkania.
-user	19:00 - 21:00
-system	Niestety, godzina ta jest już zajęta przez inne spotkanie, proponuję godzinę 19:30 - 21:30.
-user	ok
-system	Czy mam zapisać miejsce spotkania?
-user	nie
-system	Czy mam dodać opis do spotkania?
-user	nie
-system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?
-user	nie
-system	Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 5.04.2021 19:30-21:30
-user	potwierdzam
-system	Spotkanie zostało pomyślnie dodane do kalendarza.
-user	Koniec zapisu
-system	Miłego dnia
+﻿user	Chciałbym zapisać spotkanie	request(create meeting)
+system	Proszę podać dzień na jaki mam zapisać spotkanie.	request(date)
+user	05.04.2021	infrom(date=05.04.2021)
+system	Proszę podać godzinę i długość spotkania.	request(time)
+user	19:00 - 21:00	inform(time=19:00-21:00)
+system	Niestety, godzina ta jest już zajęta przez inne spotkanie, proponuję godzinę 19:30 - 21:30. offer(time=19:30-21:30)
+user	ok	confirm(time)
+system	Czy mam zapisać miejsce spotkania? request(place)
+user	nie	negate()
+system	Czy mam dodać opis do spotkania?	request(description)
+user	nie	negate()
+system	Czy mam zapisać naziwsko osoby, której dotyczy to spotkanie?	request(participant)
+user	nie	negate()
+system	Proszę potwierdzić utworzenie spotkania: Data: Poniedziałek 5.04.2021 19:30-21:30	confirm-domain()
+user	potwierdzam	ack(create meeting)
+system	Spotkanie zostało pomyślnie dodane do kalendarza.	inform(create meeting)
+user	Koniec zapisu	bye()
+system	Miłego dnia	bye()

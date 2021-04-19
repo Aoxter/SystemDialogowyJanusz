@@ -1,14 +1,14 @@
-﻿system	Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Jakie mam wolne terminy w najbliższy piątek
-system	Wolne terminy w piątek to: 9:00-12:15 14:00-15:00 18:00-24:00
-user	Chciałabym, aby moje spotkania mogły być planowane maksymalnie do godziny 17 by mieć spokój poza godzinami pracy
-system	Godziny spotkań zostały pomyślnie zmienione. Obecne godziny to 8:00-17:00
-user	Dziękuję. Proszę wpisać spotkanie na piątek godzinę 9:00 "Podsumowanie miesiąca", salka A
-system	Proszę potwierdzić utworzenie spotkania: Data: Piątek 2.04.2021 9:00 Miejsce: salka A Spotkanie z: Brak Opis: Podsumowanie miesiąca
-user	potwierdzam
-system	Spotkanie zostało pomyślnie dodane do kalendarza.
-user	Chciałabym zobaczyć podsumowanie spotkań z ostatniego miesiąca
-system	Na ostatni miesiąc zaplanowano następujące spotkania: 
-system	Data: Czwartek 11.02.2021 20:00-21:30 Miejsce: Multikino Spotkanie z: Kasia Opis: Wyjście do kina 
-system	Data: Sobota 20.02.2021 12:00-14:00 Miejsce: Cytadela Spotkanie z: Brak Opis: Spacer 
-system	Data: Piątek 26.02.2021 14:00-15:00 Miejsce: XYZ Sp. z o.o. Spotkanie z: Andrzej Michalski - rekruter z firmy XYZ Sp. z o.o. Opis: Rozmowa rekrutacyjna
+﻿system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Jakie mam wolne terminy w najbliższy piątek	request(free time)
+system	Wolne terminy w piątek to: 9:00-12:15 14:00-15:00 18:00-24:00	inform(free time)
+user	Chciałabym, aby moje spotkania mogły być planowane maksymalnie do godziny 17 by mieć spokój poza godzinami pracy	request(max meeting time)
+system	Godziny spotkań zostały pomyślnie zmienione. Obecne godziny to 8:00-17:00	inform(meeting time=8:00-17:00)
+user	Dziękuję. Proszę wpisać spotkanie na piątek godzinę 9:00 "Podsumowanie miesiąca", salka A	request(create meeting)
+system	Proszę potwierdzić utworzenie spotkania: Data: Piątek 2.04.2021 9:00 Miejsce: salka A Spotkanie z: Brak Opis: Podsumowanie miesiąca	confirm-domain()
+user	potwierdzam	confirm()
+system	Spotkanie zostało pomyślnie dodane do kalendarza.	inform(create meeting)
+user	Chciałabym zobaczyć podsumowanie spotkań z ostatniego miesiąca	request(meetings list)
+system	Na ostatni miesiąc zaplanowano następujące spotkania:	inform(meetings list)
+system	Data: Czwartek 11.02.2021 20:00-21:30 Miejsce: Multikino Spotkanie z: Kasia Opis: Wyjście do kina	inform(meetings list)
+system	Data: Sobota 20.02.2021 12:00-14:00 Miejsce: Cytadela Spotkanie z: Brak Opis: Spacer	inform(meetings list)
+system	Data: Piątek 26.02.2021 14:00-15:00 Miejsce: XYZ Sp. z o.o. Spotkanie z: Andrzej Michalski - rekruter z firmy XYZ Sp. z o.o. Opis: Rozmowa rekrutacyjna	inform(meetings list)

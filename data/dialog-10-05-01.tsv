@@ -1,18 +1,18 @@
-﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
-user	Chciałbym sprawdzić moje spotkania w piątek
-system	Na piątek 02.04.2021 nie masz zaplanywanych żadnych spotkań.
-user	proszę wpisać na 02.04.2021 o godzinie 19:00: Wyjście do kina ze znajomą
-system	Ile będzie trwało to spotkanie?
-user	2 godziny
-system	Spotkanie zostało dodane: Data: Piątek 02.04.2021 19:00-21:00 Miejsce: kino Z: znajoma Opis: wyjście do kina
-user	Pomyliłem się podczas podawania godziny. Chciałbym przełożyć to spotkanie na 20:00 do 22:00
-system	Spotkanie zostało zmienione: Data: Piątek 02.04.2021 20:00-22:00 Miejsce: kino Z: znajoma Opis: wyjście do kina
-user	Dziękuję
-system	Czy mogę jeszcze Ci w czymś pomóc?
-user	ile będę miał dni bez zaplanowanych spotkań w przyszłym miesiącu
-system	Dni bez zaplanowanych spotkań w przyszłym miesiącu: 29
-user	Dziękuję za informację
-system	Czy mogę jeszcze w czymś pomóc?
-user	To wszystko. Dziękuję
-system	Do widzenia, życzę miłego dnia.
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?	welcomemsg()
+user	Chciałbym sprawdzić moje spotkania w piątek	request(meeting_list) & inform(date=02.04.2021)
+system	Na piątek 02.04.2021 nie masz zaplanywanych żadnych spotkań.	inform(meeting_list)
+user	proszę wpisać na 02.04.2021 o godzinie 19:00: Wyjście do kina ze znajomą	request(create meeting) & inform(date=02.04.2021) & inform(time=19:00) & inform(participant=znajoma) & inform(place=kino) & inform(description=wyjście do kina)
+system	Ile będzie trwało to spotkanie?	request(meeting_length)
+user	2 godziny	inform(meeting_length=2 godziny)
+system	Spotkanie zostało dodane: Data: Piątek 02.04.2021 19:00-21:00 Miejsce: kino Z: znajoma Opis: wyjście do kina	affirm()
+user	Pomyliłem się podczas podawania godziny. Chciałbym przełożyć to spotkanie na 20:00 do 22:00	request(update_meeting) & inform(time=20:00) & inform(meeting_length=2 godziny)
+system	Spotkanie zostało zmienione: Data: Piątek 02.04.2021 20:00-22:00 Miejsce: kino Z: znajoma Opis: wyjście do kina	affirm()
+user	Dziękuję	thankyou()
+system	Czy mogę jeszcze Ci w czymś pomóc?	reqmore()
+user	ile będę miał dni bez zaplanowanych spotkań w przyszłym miesiącu	request(free_days_count) & inform(time=przyszły miesiąc)
+system	Dni bez zaplanowanych spotkań w przyszłym miesiącu: 29	welcomemsg()
+user	Dziękuję za informację	thankyou()
+system	Czy mogę jeszcze w czymś pomóc?	reqmore()
+user	To wszystko. Dziękuję	bye()
+system	Do widzenia, życzę miłego dnia.	bye()
 	
