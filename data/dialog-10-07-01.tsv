@@ -1,16 +1,16 @@
-﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
-user	Jakie mam nadchodzące wydarzenia w tym tygodniu?
-system	Wydarzenia w tym tygodniu: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
-user	Chciałabym przesunąć spotkanie z Jan Nowak na najbliższy wtorek
-system	Na którą godzinę?
-user	Jakie mam godziny dostępne w najblizszy wtorek?
-system	Dostępne godziny w najbliższy wtorek: 00:00-10:00 12:00-14:00 15:30-24:00
-user	na godzinę 9:30
-system	Które spotkanie z Jan Nowak chcesz przesunąć? Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
-user	drugie
-system	Spotkanie zostało zmienione: Data: Wtorek 30.03.2021 09:00-12:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC
-system	Czy mogę jeszcze Ci w czymś pomóc?
-user	Chciałabym wyświetlić swoją listę kontaktów
-system	Niestety asystent kalendarza spotkań nie obsługuje obecnie listy kontaktów. Weźmiemy pod uwagę twoje uwagi przy dalszym jego rozwoju.
-user	W takim razie to wszystko
-system	Dziękuję. Życzę miłego dnia.
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?	welcomemsg()
+user	Jakie mam nadchodzące wydarzenia w tym tygodniu?	request(meeting_list) & inform(date=ten tydzień)
+system	Wydarzenia w tym tygodniu: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC	inform(meeting_list)
+user	Chciałabym przesunąć spotkanie z Jan Nowak na najbliższy wtorek	request(update_meeting)
+system	Na którą godzinę?	request(time)
+user	Jakie mam godziny dostępne w najblizszy wtorek?	request(free_time) & inform(date=najbliższy wtorek)
+system	Dostępne godziny w najbliższy wtorek: 00:00-10:00 12:00-14:00 15:30-24:00	inform(free_time)
+user	na godzinę 9:30	inform(time=9:30)
+system	Które spotkanie z Jan Nowak chcesz przesunąć? Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC	inform(meeting_list) & request(meeting)
+user	drugie	inform(meeting=drugie)
+system	Spotkanie zostało zmienione: Data: Wtorek 30.03.2021 09:00-12:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC	affirm()
+system	Czy mogę jeszcze Ci w czymś pomóc?	reqmore()
+user	Chciałabym wyświetlić swoją listę kontaktów	request(contact_list)
+system	Niestety asystent kalendarza spotkań nie obsługuje obecnie listy kontaktów. Weźmiemy pod uwagę twoje uwagi przy dalszym jego rozwoju.	canthelp()
+user	W takim razie to wszystko	bye()
+system	Dziękuję. Życzę miłego dnia.	bye()

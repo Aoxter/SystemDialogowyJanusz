@@ -1,6 +1,6 @@
 ﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?	welcomemsg()
-user	Chciałbym sprawdzić moje spotkania w piątek	request(meetings_list) & inform(date=02.04.2021)
-system	Na piątek 02.04.2021 nie masz zaplanywanych żadnych spotkań.	inform(meetings_list)
+user	Chciałbym sprawdzić moje spotkania w piątek	request(meeting_list) & inform(date=02.04.2021)
+system	Na piątek 02.04.2021 nie masz zaplanywanych żadnych spotkań.	inform(meeting_list)
 user	proszę wpisać na 02.04.2021 o godzinie 19:00: Wyjście do kina ze znajomą	request(create meeting) & inform(date=02.04.2021) & inform(time=19:00) & inform(participant=znajoma) & inform(place=kino) & inform(description=wyjście do kina)
 system	Ile będzie trwało to spotkanie?	request(meeting_length)
 user	2 godziny	inform(meeting_length=2 godziny)

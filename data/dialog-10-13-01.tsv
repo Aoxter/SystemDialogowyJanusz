@@ -1,11 +1,11 @@
-﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?
-user	Proszę o rozpiskę spotkań w tym tygodniu.
-system	Spotkania w tym tygodniu: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Piątek 02.04.2021 19:00-20:00 Miejsce: Restauracja ABC Spotkanie z: Janusz Kowalski - Prezes firmy XYZ
-user	Chciałabym odwołać spotkanie
-system	Jakie spotkanie chcesz odwołać?
-user	Spotkanie z Januszem Kowalskim.
-system	Czy na pewno odwołać spotkanie? Data: Piątek 02.04.2021 19:00-20:00 Miejsce: Restauracja ABC Spotkanie z: Janusz Kowalski - Prezes firmy XYZ
-user	Tak
-system	Spotkanie zostało odwołane. Czy mogę jeszcze Ci w czymś pomóc?
-user	Nie, dziękuję.
-system	Dziękuję. Do widzenia.
+﻿system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?	welcomemsg()
+user	Proszę o rozpiskę spotkań w tym tygodniu.	request(meeting_list) & inform(date=w tym tygodniu)
+system	Spotkania w tym tygodniu: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Piątek 02.04.2021 19:00-20:00 Miejsce: Restauracja ABC Spotkanie z: Janusz Kowalski - Prezes firmy XYZ	inform(meeting_list)
+user	Chciałabym odwołać spotkanie	request(cancel_meeting)
+system	Jakie spotkanie chcesz odwołać?	request(meeting)
+user	Spotkanie z Januszem Kowalskim.	inform(meeting=Spotkanie z Januszem Kowalskim)
+system	Czy na pewno odwołać spotkanie? Data: Piątek 02.04.2021 19:00-20:00 Miejsce: Restauracja ABC Spotkanie z: Janusz Kowalski - Prezes firmy XYZ	confirm-domain()
+user	Tak	confirm()
+system	Spotkanie zostało odwołane. Czy mogę jeszcze Ci w czymś pomóc?	affirm() & reqmore()
+user	Nie, dziękuję.	bye()
+system	Dziękuję. Do widzenia.	bye()
