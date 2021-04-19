@@ -1,17 +1,16 @@
-﻿user	Dzień dobry!
-system	Dzień dobry. Witam w twoim prywatnym asystencie kalendarza spotkań.
-user	Podaj mi proszę moje spotkania na najbliższy tydzień
-system	Na najbliższy tydzień zaplanowano następujące spotkania: 
-system	Data: Wtorek 30.03.2021 10:00-11:30 Miejsce: Platforma MS Teams Spotkanie z: Marek Kubis Opis: Odrabianie zajęć z Systemów Dialogowych
-system	Data: Piątek 02.03.2021 18:00-20:00 Miejsce: Brak Spotkanie z: Jan Nowak Opis: Piątkowe Kręgle
-user	hmm. myślałam, że miałam umówioną wizytę u lekarza w tym tygodniu
-user	jakie spotkania mam w przyszłym?
-system	Na następny tydzień zaplanowano następujące spotkania:
-system	Data: Środa 7.04.2021 16:15 Miejsce: Przychodnia lekarska SuperMed Spotkanie z: doktor Adam Kowalski Opis: Wizyta u lekarza rodzinnego
-user	Ok. czyli w przyszłym. Zmień proszę godzinę tego spotkania na 17:30
-system	Czas spotkania został pomyślnie zmieniony.
-user	Bardzo dziękuję
-user	To wszystko na tę chwilę
-system	Miłego dnia
-user	Dziękuję!
+﻿user	Dzień dobry!	hello()
+system	Dzień dobry. Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
+user	Podaj mi proszę moje spotkania na najbliższy tydzień	request(meetings list)
+system	Na najbliższy tydzień zaplanowano następujące spotkania:	inform(meetings list) 
+system	Data: Wtorek 30.03.2021 10:00-11:30 Miejsce: Platforma MS Teams Spotkanie z: Marek Kubis Opis: Odrabianie zajęć z Systemów Dialogowych	inform(meetings list) 
+system	Data: Piątek 02.03.2021 18:00-20:00 Miejsce: Brak Spotkanie z: Jan Nowak Opis: Piątkowe Kręgle	inform(meetings list) 
+user	hmm. myślałam, że miałam umówioną wizytę u lekarza w tym tygodniu. Jakie spotkania mam w przyszłym?	request(meetings list)
+system	Na następny tydzień zaplanowano następujące spotkania:	inform(meetings list) 
+system	Data: Środa 7.04.2021 16:15 Miejsce: Przychodnia lekarska SuperMed Spotkanie z: doktor Adam Kowalski Opis: Wizyta u lekarza rodzinnego	inform(meetings list)
+user	Ok. czyli w przyszłym. Zmień proszę godzinę tego spotkania na 17:30	request(update meeting)
+system	Czas spotkania został pomyślnie zmieniony.	confirm()
+user	Bardzo dziękuję	thankyou()
+user	To wszystko na tę chwilę	bye()
+system	Miłego dnia	bye()
+user	Dziękuję!	thankyou()
 
