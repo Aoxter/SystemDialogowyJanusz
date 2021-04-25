@@ -4,6 +4,11 @@ import re
 
 
 class NLU:
+    """
+    Moduł odpowiedzialny za analizę tekstu. W wyniku jego działania tekstowa reprezentacja wypowiedzi użytkownika zostaje zamieniona na jej reprezentację semantyczną, najczęściej w postaci ramy.
+    Wejście: Tekst
+    Wyjście: Akt użytkownika (rama)
+    """
 
     def __init__(self):
         self.__actParsePatternList = [
@@ -31,16 +36,3 @@ class NLU:
             if match:
                 return UserAct(actType, actParams)
         return UserAct(UserActType.INVALID)
-
-
-if __name__ == "__main__":
-
-    nlu = NLU()
-
-    a = nlu.parseUserInput("czesc")
-    b = nlu.parseUserInput("jak masz na imie")
-    c = nlu.parseUserInput("zegnaj")
-
-    print(a)
-    print(b)
-    print(c)
