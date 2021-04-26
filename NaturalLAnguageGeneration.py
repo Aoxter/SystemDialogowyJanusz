@@ -9,7 +9,9 @@ class NLG:
         pass
 
     def toText(self, systemAct):
-        if(systemAct == [0]):
-            return "Witaj, nazywam się XXX"
+        if systemAct == [1]:
+            return "Nie rozumiem o czym mówisz."
+        if systemAct == [2]:
+            return "Do widzenia."
         else:
-            return "???"
+            return "Witaj, nazywam się Janusz."

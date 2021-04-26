@@ -1,5 +1,5 @@
 from NaturalLanguageUnderstanding import NLU
-from NaturalLAnguageGeneration import NLG
+from NaturalLanguageGeneration import NLG
 from DialogueStateTracker import DST
 from DialoguePolicy import DP
 
@@ -7,12 +7,17 @@ if __name__ == "__main__":
 
     nlu = NLU()
     dst = DST()
-    nlg = NLG()
     dp = DP()
+    nlg = NLG()
 
-    userFrame = nlu.parseUserInput("czesc")
-    dst.addFrame(userFrame)
-    systemAct = dp.chooseTactic(dst.getFrames())
-    text = nlg.toText(systemAct)
+    while(1):
+        user_input = input("Wpisz tekst: ")
 
-    print(text)
+        user_frame = nlu.parseUserInput(user_input)
+        dst.addFrame(user_frame)
+        system_act = dp.chooseTactic(dst.getFrames())
+        text = nlg.toText(system_act)
+
+        print(text)
+        if text == "Do widzenia.":
+            break
