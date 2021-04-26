@@ -29,7 +29,7 @@ class NLU:
             )
         ]
 
-    def parseUserInput(self, text):
+    def parseUserInput(self, text: str) -> UserAct:
         for pattern, actType, actParams in self.__actParsePatternList:
             regex = re.compile(pattern, re.IGNORECASE)
             match = regex.match(text)

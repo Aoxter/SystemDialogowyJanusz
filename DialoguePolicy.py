@@ -1,5 +1,6 @@
+from SystemAct import SystemAct
 from UserActType import UserActType
-from UserAct import UserAct
+from SystemActType import SystemActType
 
 
 class DP:
@@ -12,13 +13,15 @@ class DP:
     def __init__(self):
         pass
 
-    def chooseTactic(self, frameList=None):
-        if frameList[-1].getActType() is UserActType.INVALID:
-            systemAct = [1]
-            return systemAct
-        elif frameList[-1].getActType() is UserActType.BYE:
-            systemAct = [2]
-            return systemAct
-        else:
-            systemAct = [0]
-            return systemAct
+    def chooseTactic(self, frameList=None) -> SystemAct:
+        userAct = frameList[-1]
+        if userAct.getActType() == UserActType.WELCOME_MSG:
+            return  SystemAct(SystemActType.WELCOME_MSG)
+        if userAct.getActType() == UserActType.REQUEST:
+            if "name" in userAct.getActParams():
+                return SystemAct(SystemActType.INFORM,['name'])
+        if userAct.getActType() == UserActType.BYE:
+            return SystemAct(SystemActType.BYE)
+        if userAct.getActType() == UserActType.INVALID:
+            return SystemAct(SystemActType.NOT_UNDERSTOOD)
+        raise Exception("UserAct:{} not recognized".format(userAct))

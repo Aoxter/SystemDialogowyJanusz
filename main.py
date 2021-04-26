@@ -19,5 +19,5 @@ if __name__ == "__main__":
         text = nlg.toText(system_act)
 
         print(text)
-        if text == "Do widzenia.":
+        if system_act.isDialogFinished():
             break
