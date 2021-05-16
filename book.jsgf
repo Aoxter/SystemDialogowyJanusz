@@ -2,26 +2,20 @@
 
 grammar book;
 
-public <create_meeting> = (zapisać | wpisać | dodać | utworzyć | umówić) nowe* spotkanie;
+public <create_meeting> = chciałbym (zapisać | wpisać | dodać | utworzyć | umówić) nowe* spotkanie;
 
-public <cancel_meeting> = (anulować | odwołać | usunąć) spotkanie;
+public <cancel_meeting> = chciałbym (anulować | odwołać | usunąć) spotkanie;
 
-public <change_meeting> = (przesunąć | zmienić | edytować) spotkanie;
+public <change_meeting> = chciałbym (przesunąć | zmienić | edytować) spotkanie;
 
-public <rezerwuj> = chciałbym zarezerwować stolik <dzien_rezerwacji> <godzina_rezerwacji> <liczba_osob> ;
+public <meeting_list> = jakie spotkania mam <meeting_date> {date};
 
-<dzien_rezerwacji> = na <dzien> {day};
+<meeting_date> = (<day> <month> | dzisiaj | jutro | pojutrze | <week_day>);
 
-<dzien> = dzisiaj | jutro | poniedziałek | wtorek | środę | czwartek | piątek | sobotę | niedzielę;
+<day> = 1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31;
 
-<godzina_rezerwacji> = na [godzinę] <godzina_z_minutami> {hour};
+<month> = stycznia | lutego | marca | kwietnia | maja | czerwca | lipca | sierpnia | września | października | listopada | grudnia;
 
-<godzina_z_minutami> = <godzina> [<minuty>];
+<week_day> = w (poniedziałek | środę | czwartek | piątek | sobotę | niedzielę) | we wtorek;
 
-<godzina> = dziewiątą | dziesiątą | jedenastą | dwunastą;
-
-<minuty> = pietnaście | trzydzieści;
-
-<liczba_osob> = (na | dla) <liczba> {size} osób;
-
-<liczba> = dwie | dwóch | trzy | trzech | cztery | czterech | pięć | pieciu;
+public <confirm> = potwierdzam | tak

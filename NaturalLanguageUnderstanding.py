@@ -10,8 +10,9 @@ class NLU:
     def get_dialog_act(self, rule):
         slots = []
         self.get_slots(rule.expansion, slots)
-        print(rule.grammar.name)
-        return UserAct(UserActType.valueOf(rule.grammar.name.upper()), slots)
+        print(rule)
+        print(slots)
+        return UserAct(UserActType[rule.name.upper()], slots)
 
     def get_slots(self, expansion, slots):
         if expansion.tag != '':
