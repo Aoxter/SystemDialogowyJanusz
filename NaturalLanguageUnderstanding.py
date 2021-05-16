@@ -1,38 +1,31 @@
 from UserActType import UserActType
 from UserAct import UserAct
-import re
+import jsgf
 
 
 class NLU:
-    """
-    Moduł odpowiedzialny za analizę tekstu. W wyniku jego działania tekstowa reprezentacja wypowiedzi użytkownika zostaje zamieniona na jej reprezentację semantyczną, najczęściej w postaci ramy.
-    Wejście: Tekst
-    Wyjście: Akt użytkownika (rama)
-    """
-
     def __init__(self):
-        self.__actParsePatternList = [
-            (
-                r"(.*)(cze(ś|s)(ć|c)|witaj|dzie(ń|n) dobry)(.*)",
-                UserActType.WELCOME_MSG,
-                []
-            ),
-            (
-                r"(.*)(Jak (masz na imi(ę|e))|(si(ę|e) nazywasz))(.*)",
-                UserActType.REQUEST,
-                ["name"]
-            ),
-            (
-                r"(.*)((ż|z)egnaj)|(do widzenia)|(na razie)(.*)",
-                UserActType.BYE,
-                []
-            )
-        ]
+        self.book_grammar = jsgf.parse_grammar_file('book.jsgf')
 
-    def parseUserInput(self, text: str) -> UserAct:
-        for pattern, actType, actParams in self.__actParsePatternList:
-            regex = re.compile(pattern, re.IGNORECASE)
-            match = regex.match(text)
-            if match:
-                return UserAct(actType, actParams)
+    def get_dialog_act(self, rule):
+        slots = []
+        self.get_slots(rule.expansion, slots)
+        print(rule.grammar.name)
+        return UserAct(UserActType.valueOf(rule.grammar.name.upper()), slots)
+
+    def get_slots(self, expansion, slots):
+        if expansion.tag != '':
+            slots.append((expansion.tag, expansion.current_match))
+            return
+
+        for child in expansion.children:
+            self.get_slots(child, slots)
+
+        if not expansion.children and isinstance(expansion, jsgf.NamedRuleRef):
+            self.get_slots(expansion.referenced_rule.expansion, slots)
+
+    def parse_user_input(self, text: str) -> UserAct:
+        matched_rules = self.book_grammar.find_matching_rules(text)
+        if matched_rules:
+            return self.get_dialog_act(matched_rules[0])
         return UserAct(UserActType.INVALID)

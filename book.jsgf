@@ -1,0 +1,27 @@
+#JSGF V1.0 UTF-8 pl;
+
+grammar book;
+
+public <create_meeting> = (zapisać | wpisać | dodać | utworzyć | umówić) nowe* spotkanie;
+
+public <cancel_meeting> = (anulować | odwołać | usunąć) spotkanie;
+
+public <change_meeting> = (przesunąć | zmienić | edytować) spotkanie;
+
+public <rezerwuj> = chciałbym zarezerwować stolik <dzien_rezerwacji> <godzina_rezerwacji> <liczba_osob> ;
+
+<dzien_rezerwacji> = na <dzien> {day};
+
+<dzien> = dzisiaj | jutro | poniedziałek | wtorek | środę | czwartek | piątek | sobotę | niedzielę;
+
+<godzina_rezerwacji> = na [godzinę] <godzina_z_minutami> {hour};
+
+<godzina_z_minutami> = <godzina> [<minuty>];
+
+<godzina> = dziewiątą | dziesiątą | jedenastą | dwunastą;
+
+<minuty> = pietnaście | trzydzieści;
+
+<liczba_osob> = (na | dla) <liczba> {size} osób;
+
+<liczba> = dwie | dwóch | trzy | trzech | cztery | czterech | pięć | pieciu;

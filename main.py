@@ -13,7 +13,7 @@ if __name__ == "__main__":
     while(1):
         user_input = input("Wpisz tekst: ")
 
-        user_frame = nlu.parseUserInput(user_input)
+        user_frame = nlu.parse_user_input(user_input)
         dst.addFrame(user_frame)
         system_act = dp.chooseTactic(dst.getFrames())
         text = nlg.toText(system_act)
