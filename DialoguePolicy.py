@@ -15,13 +15,11 @@ class DP:
 
     def chooseTactic(self, frameList=None) -> SystemAct:
         userAct = frameList[-1]
-        if userAct.getActType() == UserActType.WELCOME_MSG:
+        if userAct.getActType() == UserActType.HELLO:
             return  SystemAct(SystemActType.WELCOME_MSG)
-        if userAct.getActType() == UserActType.REQUEST:
-            if "name" in userAct.getActParams():
-                return SystemAct(SystemActType.INFORM,['name'])
-        if userAct.getActType() == UserActType.BYE:
+        elif userAct.getActType() == UserActType.BYE:
             return SystemAct(SystemActType.BYE)
-        if userAct.getActType() == UserActType.INVALID:
+        elif userAct.getActType() == UserActType.INVALID:
             return SystemAct(SystemActType.NOT_UNDERSTOOD)
-        raise Exception("UserAct:{} not recognized".format(userAct))
+        else:
+            return SystemAct(SystemActType.INFORM,['name'])

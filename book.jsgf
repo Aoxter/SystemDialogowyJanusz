@@ -2,7 +2,7 @@
 
 grammar book;
 
-public <create_meeting> = chciałbym (zapisać | wpisać | dodać | utworzyć | umówić) nowe* spotkanie;
+public <create_meeting> = chciałbym (zapisać | wpisać | dodać | utworzyć | umówić) (nowe)* spotkanie;
 
 public <cancel_meeting> = chciałbym (anulować | odwołać | usunąć) spotkanie;
 
@@ -18,4 +18,10 @@ public <meeting_list> = jakie spotkania mam <meeting_date> {date};
 
 <week_day> = w (poniedziałek | środę | czwartek | piątek | sobotę | niedzielę) | we wtorek;
 
-public <confirm> = potwierdzam | tak
+public <confirm> = potwierdzam | tak | zgadza się;
+
+public <hello> = witam | dzień dobry | cześć | siemka | dobry wieczór | hej | hejka;
+
+public <thankyou> = dziękuję (bardzo)*;
+
+public <bye> = do widzenia | miłego dnia | to by było wszystko na teraz | <thankyou> to wszystko;

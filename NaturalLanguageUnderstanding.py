@@ -10,8 +10,6 @@ class NLU:
     def get_dialog_act(self, rule):
         slots = []
         self.get_slots(rule.expansion, slots)
-        print(rule)
-        print(slots)
         return UserAct(UserActType[rule.name.upper()], slots)
 
     def get_slots(self, expansion, slots):
@@ -29,4 +27,4 @@ class NLU:
         matched_rules = self.book_grammar.find_matching_rules(text)
         if matched_rules:
             return self.get_dialog_act(matched_rules[0])
-        return UserAct(UserActType.INVALID)
+        return UserAct(UserActType.INVALID, [])
