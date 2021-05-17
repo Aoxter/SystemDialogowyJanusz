@@ -22,6 +22,8 @@ public <confirm> = potwierdzam | tak | zgadza się;
 
 public <hello> = witam | dzień dobry | cześć | siemka | dobry wieczór | hej | hejka;
 
-public <thankyou> = dziękuję (bardzo)*;
+public <thankyou> = (bardzo)* dziękuję (bardzo)*;
 
-public <bye> = do widzenia | miłego dnia | to by było wszystko na teraz | <thankyou> to wszystko;
+public <bye> = do widzenia | miłego dnia | to by było wszystko na teraz | <thankyou> to wszystko | to wszystko na tę chwilę;
+
+public <negate> = nie; 

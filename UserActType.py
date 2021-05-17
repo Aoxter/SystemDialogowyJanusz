@@ -10,5 +10,6 @@ class UserActType(Enum):
     CHANGE_MEETING = 4
     MEETING_LIST = 5
     CONFIRM = 6
-    THANKYOU = 7
+    NEGATE = 7
+    THANKYOU = 8
     INVALID = -1
