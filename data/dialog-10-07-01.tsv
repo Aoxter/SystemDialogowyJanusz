@@ -1,10 +1,10 @@
 ﻿Interlocutor	Text	Acts
 system	Witam w prywatnym asystencie kalendarza spotkań. W czym mogę pomóc?	welcomemsg()
-user	Jakie mam nadchodzące wydarzenia w tym tygodniu?	request(meeting_list) & inform(date='ten tydzień')
+user	Jakie mam nadchodzące wydarzenia w tym tygodniu?	meeting_list(date='tym tygodniu')
 system	Wydarzenia w tym tygodniu: Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC	inform(meeting_list)
-user	Chciałabym przesunąć spotkanie z Jan Nowak na najbliższy wtorek	request(update_meeting)
+user	Chciałabym przesunąć spotkanie z Jan Nowak na najbliższy wtorek	update_meeting(participant='Jan Nowak', date='najbliższy wtorek')
 system	Na którą godzinę?	request(time)
-user	Jakie mam godziny dostępne w najblizszy wtorek?	request(free_time) & inform(date='najbliższy wtorek')
+user	Jakie mam godziny dostępne w najblizszy wtorek?	free_time(date='najbliższy wtorek')
 system	Dostępne godziny w najbliższy wtorek: 00:00-10:00 12:00-14:00 15:30-24:00	inform(free_time)
 user	na godzinę 9:30	inform(time='9:30')
 system	Które spotkanie z Jan Nowak chcesz przesunąć? Data: Wtorek 30.03.2021 14:00-15:30 Miejsce: Sala konferencyjna w biurze Spotkanie z: Jan Nowak - Prezes firmy ABC --- Data: Czwartek 01.04.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Jan Nowak - Prezes firmy ABC	inform(meeting_list) & request(meeting)

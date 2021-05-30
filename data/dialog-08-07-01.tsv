@@ -1,14 +1,14 @@
 ﻿Interlocutor	Text	Acts
 system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
-user	Jakie mam wolne terminy w najbliższy piątek	request(free_time)
+user	Jakie mam wolne terminy w najbliższy piątek	free_time(date='najbliższy piątek')
 system	Wolne terminy w piątek to: 9:00-12:15 14:00-15:00 18:00-24:00	inform(free_time)
 user	Chciałabym, aby moje spotkania mogły być planowane maksymalnie do godziny 17 by mieć spokój poza godzinami pracy	request(set_max_meeting_time)
 system	Godziny spotkań zostały pomyślnie zmienione. Obecne godziny to 8:00-17:00	inform(time=8:00, duration='9 godzin')
-user	Dziękuję. Proszę wpisać spotkanie na piątek godzinę 9:00 "Podsumowanie miesiąca", salka A	request(create_meeting)
+user	Dziękuję. Proszę wpisać spotkanie na piątek godzinę 9:00 "Podsumowanie miesiąca", salka A	create_meeting(date='piątek',time='9:00',description='Podsumowanie miesiąca',place='Salka A'
 system	Proszę potwierdzić utworzenie spotkania: Data: Piątek 2.04.2021 9:00 Miejsce: salka A Spotkanie z: Brak Opis: Podsumowanie miesiąca	confirm-domain()
 user	potwierdzam	ack(create_meeting)
-system	Spotkanie zostało pomyślnie dodane do kalendarza.	affirm(create_meeting)
-user	Chciałabym zobaczyć podsumowanie spotkań z ostatniego miesiąca	request(meeting_list)
+system	Spotkanie zostało pomyślnie dodane do kalendarza.	confirm()
+user	Chciałabym zobaczyć podsumowanie spotkań z ostatniego miesiąca	meeting_list(date='ostatniego miesiąca')
 system	Na ostatni miesiąc zaplanowano następujące spotkania:	inform(meeting_list)
 system	Data: Czwartek 11.02.2021 20:00-21:30 Miejsce: Multikino Spotkanie z: Kasia Opis: Wyjście do kina	inform(meeting_list)
 system	Data: Sobota 20.02.2021 12:00-14:00 Miejsce: Cytadela Spotkanie z: Brak Opis: Spacer	inform(meeting_list)

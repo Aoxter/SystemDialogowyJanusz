@@ -1,10 +1,10 @@
 Interlocutor	Text	Acts
 user	Witam.	hello()
 system	Witam w twoim prywatnym asystencie kalendarza spotkań.	welcomemsg()
-user	Czy mam obecnie jakieś zaplanowane spotkania?	request(meeting_list)
+user	Czy mam obecnie jakieś zaplanowane spotkania?	meeting_list()
 system	Data: Wtorek 30.03.2021 19:00-20:30 Miejsce: Restauracja ABC Spotkanie z: Jan Kowalski --- Data: Środa 31.03.2021 12:00-15:30 Miejsce: Firma ABC Spotkanie z: Adam Nowak	inform(meeting_list)
-user	Chciałbym przesunąć pierwsze spotkanie na za tydzień.	request(update_meeting) & inform(meeting='pierwsze spotkanie', date_add='tydzień')
+user	Chciałbym przesunąć pierwsze spotkanie na za tydzień.	update_meeting()
 system	Proszę potwierdzić zmianę spotkania:\nData: Wtorek 06.04.2021 19:00-20:30\nMiejsce: Restauracja ABC\nSpotkanie z: Jan Kowalski	confirm-domain()
-user	Potwierdzam	confirm(update_meeting)
+user	Potwierdzam	confirm()
 system	Spotkanie zostało zmienione. Czy mogę pomóc w czymś jeszcze?	affirm(update_meeting) && reqmore()
 user	Nie, dziękuję za pomoc - to wszystko : ).	bye() & thankyou()

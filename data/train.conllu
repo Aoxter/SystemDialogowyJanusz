@@ -1,0 +1,856 @@
+# text: dzień dobry
+# intent: hello 
+# slots: 
+1	dzień	hello	NoLabel
+2	dobry	hello	NoLabel
+
+# text: dobry wieczór
+# intent: hello 
+# slots: 
+1	dobry	hello	NoLabel
+2	wieczór	hello	NoLabel
+
+# text: witam
+# intent: hello 
+# slots: 
+1	witam	hello	NoLabel
+
+# text: siema
+# intent: hello 
+# slots: 
+1	siema	hello	NoLabel
+
+# text: cześć
+# intent: hello 
+# slots: 
+1	siema	hello	NoLabel
+
+# text: do widzenia
+# intent: bye 
+# slots: 
+1	do	bye	NoLabel
+2	widzenia	bye	NoLabel
+
+# text: miłego dnia
+# intent: bye 
+# slots: 
+1	miłego	bye	NoLabel
+2	dnia	bye	NoLabel
+
+# text: to będzie wszystko
+# intent: bye 
+# slots: 
+1	to	bye	NoLabel
+2	będzie	bye	NoLabel
+3	wszystko	bye	NoLabel
+
+# text: koniec zapisu
+# intent: bye 
+# slots: 
+1	koniec	bye	NoLabel
+2	zapisu	bye	NoLabel
+
+# text: w takim razie to wszystko
+# intent: bye 
+# slots: 
+1	w	bye	NoLabel
+2	takim	bye	NoLabel
+3	razie	bye	NoLabel
+4	to	bye	NoLabel
+1	wszystko	bye	NoLabel
+
+# text: potwierdzam
+# intent: confirm 
+# slots: 
+1	potwierdzam	confirm	NoLabel
+
+# text: ok może być
+# intent: confirm 
+# slots: 
+1	ok	confirm	NoLabel
+2	może	confirm	NoLabel
+3	być	confirm	NoLabel
+
+# text: akceptuję
+# intent: confirm 
+# slots: 
+1	akceptuję	confirm	NoLabel
+
+# text: tak
+# intent: confirm 
+# slots: 
+1	tak	confirm	NoLabel
+
+# text: zgadza się
+# intent: confirm
+# slots: 
+1	zgadza	confirm	NoLabel
+2	się	confirm	NoLabel
+
+# text: zatwierdzam
+# intent: confirm
+# slots: 
+1	zgadza	confirm	NoLabel
+2	się	confirm	NoLabel
+
+# text: nie
+# intent: negate 
+# slots: 
+1	nie	negate	NoLabel
+
+# text: bez
+# intent: negate 
+# slots: 
+1	bez	negate	NoLabel
+
+# text: zaprzeczam
+# intent: negate 
+# slots: 
+1	zaprzeczam	negate	NoLabel
+
+# text: bardzo dziękuję
+# intent: thankyou
+# slots: 
+1	bardzo	thankyou	NoLabel
+2	dziękuję	thankyou	NoLabel
+
+# text: dziękuję
+# intent: thankyou
+# slots: 
+1	dziękuję	thankyou	NoLabel
+
+# text: dziękuję za informację
+# intent: thankyou
+# slots: 
+1	dziękuję	thankyou	NoLabel
+
+# text: 05.04.2021
+# intent: inform/date 
+# slots: 
+1	05.04.2021	inform/date	B-date
+
+# text: 01.11.2023
+# intent: inform/date 
+# slots: 
+1	01.11.2023	inform/date	B-date
+
+# text: 11 grudnia
+# intent: inform/date 
+# slots: 
+1	11	inform/date	B-date
+2	grudnia	inform/date	I-date
+
+# text: 28 lutego
+# intent: inform/date 
+# slots: 
+1	28	inform/date	B-date
+2	lutego	inform/date	I-date
+
+# text: spotkanie odbędzie się 3 maja
+# intent: inform/date 
+# slots:
+1	spotkanie	inform/date	NoLabel
+2	odbędzie	inform/date	NoLabel
+3	się	inform/date	NoLabel
+4	3	inform/date	B-date
+5	maja	inform/date	I-date
+
+# text: spotkanie w piątek
+# intent: inform/date 
+# slots: 
+1	spotkanie	inform/date	NoLabel
+2	w	inform/date	NoLabel
+3	piątek	inform/date	B-date
+
+# text: pierwszy kwietnia
+# intent: inform/date 
+# slots: 
+1	pierwszy	inform/date	B-date
+2	kwietnia	inform/date	I-date
+
+# text: jutro
+# intent: inform/date 
+# slots: 
+1	jutro	inform/date	B-date
+
+# text: pojutrze
+# intent: inform/date 
+# slots: 
+1	pojutrze	inform/date	B-date
+
+# text: czwartek
+# intent: inform/date 
+# slots: 
+1	czwartek	inform/date	B-date
+
+# text: wtorek
+# intent: inform/date 
+# slots: 
+1	wtorek	inform/date	B-date
+
+# text: data to 11.11.2011
+# intent: inform/date 
+# slots: 
+1	data	inform/date	NoLabel
+1	to	inform/date	NoLabel
+1	11.11.2011	inform/date	B-date
+
+# text: spotkanie odbędzie się pojutrze
+# intent: inform/date 
+# slots: 
+1	spotkanie	inform/date	NoLabel
+2	odbędzie	inform/date	NoLabel
+3	się	inform/date	NoLabel
+4	pojutrze	inform/date	B-date
+
+# text: spotkanie będzie w środę
+# intent: inform/date 
+# slots: 
+1	spotkanie	inform/date	NoLabel
+2	będzie	inform/date	NoLabel
+3	w	inform/date	NoLabel
+4	środę	inform/date	B-date
+
+# text: ustaw datę tego spotkania na najbliższy poniedziałek
+# intent: inform/date 
+# slots: 
+1	ustaw	inform/date	NoLabel
+2	datę	inform/date	NoLabel
+3	tego	inform/date	NoLabel
+3	spotkania	inform/date	NoLabel
+3	na	inform/date	NoLabel
+3	najbliższy	inform/date	B-date
+3	poniedziałek	inform/date	I-date
+
+# text: spotkanie będzie o godzinie 19:30
+# intent: inform/time 
+# slots: 
+1	spotkanie	inform/time	NoLabel
+2	będzie	inform/time	NoLabel
+3	o	inform/time	NoLabel
+4	godzinie	inform/time	NoLabel
+5	19:30	inform/time	B-time
+
+# text: spotkanie zacznie się o godzinie 21
+# intent: inform/time 
+# slots: 
+1	spotkanie	inform/time	NoLabel
+2	zacznie	inform/time	NoLabel
+3	się	inform/time	NoLabel
+4	o	inform/time	NoLabel
+5	godzinie	inform/time	NoLabel
+6	21	inform/time	B-time
+
+# text: spotkanie będzie o 11
+# intent: inform/time 
+# slots: 
+1	spotkanie	inform/time	NoLabel
+2	będzie	inform/time	NoLabel
+3	o	inform/time	NoLabel
+4	11	inform/time	B-time
+
+# text: 12:30
+# intent: inform/time 
+# slots: 
+1	12:30	inform/time	B-time
+
+# text: godzina 18:30
+# intent: inform/time 
+# slots: 
+1	godzina	inform/time	NoLabel
+2	18:30	inform/time	B-time
+
+# text: spotkanie rozpocznie się o 12:00
+# intent: inform/time 
+# slots: 
+1	spotkanie	inform/time	NoLabel
+2	rozpocznie	inform/time	NoLabel
+3	się	inform/time	NoLabel
+4	o	inform/time	NoLabel
+5	12:00	inform/time	B-time
+
+# text: godzina tego spotkania to 7:00
+# intent: inform/time 
+# slots: 
+1	godzina	inform/time	NoLabel
+2	tego	inform/time	NoLabel
+3	spotkania	inform/time	NoLabel
+4	to	inform/time	NoLabel
+5	7:00	inform/time	B-time
+
+# text: Restauracja ABC
+# intent: inform/place 
+# slots: 
+1	Restauracja	inform/place	B-place
+2	ABC	inform/place	I-place
+
+# text: Kawiarnia MCafe przy ulicy Grunwaldzkiej
+# intent: inform/place 
+# slots: 
+1	Kawiarnia	inform/place	B-place
+2	MCafe	inform/place	I-place
+3	przy	inform/place	I-place
+4	ulicy	inform/place	I-place
+5	Grunwaldzkiej	inform/place	I-place
+
+# text: Restauracja w hotelu Anderisa
+# intent: inform/place 
+# slots: 
+1	Restauracja	inform/place	B-place
+2	w	inform/place	I-place
+3	hotelu	inform/place	I-place
+4	Anderisa	inform/place	I-place
+
+# text: Miejsce spotkania to Kawiarnia JKL
+# intent: inform/place 
+# slots: 
+1	Miejsce	inform/place	NoLabel
+2	spotkania	inform/place	NoLabel
+3	to	inform/place	NoLabel
+4	Kawiarnia	inform/place	B-place
+5	JKL	inform/place	I-place
+
+# text: Cytadela Poznań
+# intent: inform/place 
+# slots: 
+1	Cytadela	inform/place	B-place
+2	Poznań	inform/place	I-place
+
+# text: spotkanie będzie w Jeżyckich Ogrodach
+# intent: inform/place 
+# slots: 
+1	spotkanie	inform/place	NoLabel
+2	będzie	inform/place	NoLabel
+3	w	inform/place	NoLabel
+4	Jeżyckich	inform/place	B-place
+5	Ogrodach	inform/place	I-place
+
+# text: gabinet dentystyczny SuperDent
+# intent: inform/place 
+# slots: 
+1	gabinet	inform/place	B-place
+2	dentystyczny	inform/place	I-place
+3	SuperDent	inform/place	I-place
+
+# text: proszę dodać restaurację Bankcook w Poznaniu jako miejsce spotkania
+# intent: inform/place 
+# slots: 
+1	proszę	inform/place	NoLabel
+2	dodać	inform/place	NoLabel
+3	restaurację	inform/place	B-place
+4	Bankcook	inform/place	I-place
+5	w	inform/place	I-place
+6	Poznaniu	inform/place	I-place
+7	jako	inform/place	NoLabel
+8	miejsce	inform/place	NoLabel
+9	spotkania	inform/place	NoLabel
+
+# text: w przychodni przy ulicy dialogowej
+# intent: inform/place 
+# slots: 
+1	w	inform/place	NoLabel
+2	przychodni	inform/place	B-place
+3	przy	inform/place	I-place
+4	ulicy	inform/place	I-place
+5	dialogowej	inform/place	I-place
+
+# text: Jan Kowalski
+# intent: inform/participant 
+# slots: 
+1	Jan	inform/participant	B-participant
+2	Kowalski	inform/participant	I-participant
+
+# text: proszę dodać Jan Nowak do spotkania
+# intent: inform/participant 
+# slots: 
+1	proszę	inform/participant	NoLabel
+2	dodać	inform/participant	NoLabel
+3	Jan	inform/participant	B-participant
+4	Nowak	inform/participant	I-participant
+5	do	inform/participant	NoLabel
+6	spotkania	inform/participant	NoLabel
+
+# text: Hanna Kowalska
+# intent: inform/participant 
+# slots: 
+1	Hanna	inform/participant	B-participant
+2	Kowalska	inform/participant	I-participant
+
+# text: tak doktor Krzysztof Ząb
+# intent: inform/participant 
+# slots: 
+1	tak	inform/participant	NoLabel
+2	doktor	inform/participant	NoLabel
+3	Krzysztof	inform/participant	B-participant
+4	Ząb	inform/participant	I-participant
+
+# text: Spotkanie będzie z Janem Nowakiem
+# intent: inform/participant 
+# slots: 
+1	Spotkanie	inform/participant	NoLabel
+2	będzie	inform/participant	NoLabel
+3	z	inform/participant	NoLabel
+4	Janem	inform/participant	B-participant
+5	Nowakiem	inform/participant	I-participant
+
+# text: proszę zaprosić Jan Nowak Grażyna Kowalska i Hubert Noga
+# intent: inform/participant 
+# slots: 
+1	proszę	inform/participant	NoLabel
+2	zaprosić	inform/participant	NoLabel
+3	Jan	inform/participant	B-participant
+4	Nowak	inform/participant	I-participant
+5	Grażyna	inform/participant	B-participant
+6	Kowalska	inform/participant	I-participant
+7	i	inform/participant	NoLabel
+8	Hubert	inform/participant	B-participant
+9	Noga	inform/participant	I-participant
+
+# text: spotkanie będzie z Cezarym Pazurą oraz Janem Fryczem
+# intent: inform/participant 
+# slots: 
+1	spotkanie	inform/participant	NoLabel
+2	będzie	inform/participant	NoLabel
+3	z	inform/participant	B-participant
+4	Cezarym	inform/participant	B-participant
+5	Pazurą	inform/participant	I-participant
+6	oraz	inform/participant	NoLabel
+7	Janem	inform/participant	B-participant
+8	Fryczem	inform/participant	I-participant
+
+# text: Marian Paździoch i Ferdynand Kiepski
+# intent: inform/participant 
+# slots: 
+1	Marian	inform/participant	B-participant
+2	Paździoch	inform/participant	I-participant
+3	i	inform/participant	NoLabel
+4	Ferdynand	inform/participant	B-participant
+5	Kiepski	inform/participant	I-participant
+
+# text: Spotkanie rekreacyjne
+# intent: inform/description 
+# slots: 
+1	Spotkanie	inform/description	B-description
+2	rekreacyjne	inform/description	I-description
+
+# text: opis to Omówienie zakupu akcji firmy GameStop
+# intent: inform/description 
+# slots: 
+1	opis	inform/description	NoLabel
+2	to	inform/description	NoLabel
+3	Omówienie	inform/description	B-description
+4	zakupu	inform/description	I-description
+5	akcji	inform/description	I-description
+6	firmy	inform/description	I-description
+7	GameStop	inform/description	I-description
+
+# text: proszę dodać opis Omówienie projektu XYZ
+# intent: inform/description 
+# slots: 
+1	proszę	inform/description	NoLabel
+2	dodać	inform/description	NoLabel
+3	opis	inform/description	NoLabel
+4	Omówienie	inform/description	B-description
+5	projektu	inform/description	I-description
+6	XYZ	inform/description	I-description
+
+# text: nowoczesna impreza w remizie
+# intent: inform/description 
+# slots: 
+1	nowoczesna	inform/description	B-description
+2	impreza	inform/description	I-description
+3	w	inform/description	I-description
+4	remizie	inform/description	I-description
+
+# text: Intensywne rozmowy o przyrodzie przy Yerbie
+# intent: inform/description 
+# slots: 
+1	Intensywne	inform/description	B-description
+2	rozmowy	inform/description	I-description
+3	o	inform/description	I-description
+4	przyrodzie	inform/description	I-description
+5	przy	inform/description	I-description
+6	Yerbie	inform/description	I-description
+
+# text: Spotkanie z kierownikiem zespołu w sprawie prac projektowych
+# intent: inform/description 
+# slots: 
+1	Spotkanie	inform/description	NoLabel
+2	z	inform/description	NoLabel
+3	kierownikiem	inform/description	NoLabel
+4	zespołu	inform/description	NoLabel
+5	w	inform/description	B-description
+6	sprawie	inform/description	I-description
+7	prac	inform/description	I-description
+8	projektowych	inform/description	I-description
+
+# text: Spotkanie będzie dotyczyło omówienia strategii biznesowej
+# intent: inform/description 
+# slots: 
+1	Spotkanie	inform/description	NoLabel
+2	będzie	inform/description	NoLabel
+3	dotyczyło	inform/description	NoLabel
+4	omówienia	inform/description	B-description
+5	strategii	inform/description	I-description
+6	biznesowej	inform/description	I-description
+
+# text: proszę dopisać opis Opis spotkania
+# intent: inform/description 
+# slots: 
+1	proszę	inform/description	NoLabel
+2	dopisać	inform/description	NoLabel
+3	opis	inform/description	NoLabel
+4	Opis	inform/description	B-description
+5	spotkania	inform/description	I-description
+
+# text: chciałabym anulować spotkanie
+# intent: meeting/cancel
+# slots: 
+1	chciałabym	meeting/cancel	NoLabel
+2	anulować	meeting/cancel	NoLabel
+3	spotkanie	meeting/cancel	NoLabel
+
+# text: chciałbym usunać spotkanie
+# intent: meeting/cancel
+# slots: 
+1	chciałabym	meeting/cancel	NoLabel
+2	usunać	meeting/cancel	NoLabel
+3	spotkanie	meeting/cancel	NoLabel
+
+# text: proszę odwołać spotkanie
+# intent: meeting/cancel
+# slots: 
+1	proszę	meeting/cancel	NoLabel
+2	odwołać	meeting/cancel	NoLabel
+3	spotkanie	meeting/cancel	NoLabel
+
+# text: chciałbym odwołać to spotkanie
+# intent: meeting/cancel
+# slots: 
+1	chciałbym	meeting/cancel	NoLabel
+2	odwołać	meeting/cancel	NoLabel
+3	to	meeting/cancel	NoLabel
+4	spotkanie	meeting/cancel	NoLabel
+
+# text: chcę wyrzucić spotkanie z mojego kalendarza
+# intent: meeting/cancel
+# slots: 
+1	chcę	meeting/cancel	NoLabel
+2	wyrzucić	meeting/cancel	NoLabel
+3	spotkanie	meeting/cancel	NoLabel
+4	z	meeting/cancel	NoLabel
+5	mojego	meeting/cancel	NoLabel
+6	kalendarza	meeting/cancel	NoLabel
+
+# text: chciałbym przesunąć spotkanie
+# intent: meeting/update
+# slots: 
+1	chciałbym	meeting/update	NoLabel
+2	przesunąć	meeting/update	NoLabel
+3	spotkanie	meeting/update	NoLabel
+
+# text: chciałbym edytować spotkanie
+# intent: meeting/update
+# slots: 
+1	chciałbym	meeting/update	NoLabel
+2	edytować	meeting/update	NoLabel
+3	spotkanie	meeting/update	NoLabel
+
+# text: chciałbym zmienić datę spotkania
+# intent: meeting/update
+# slots: 
+1	chciałbym	meeting/update	NoLabel
+2	zmienić	meeting/update	NoLabel
+3	datę	meeting/update	NoLabel
+4	spotkania	meeting/update	NoLabel
+
+# text: czy moge przesunąć to spotkanie
+# intent: meeting/update
+# slots: 
+1	czy	meeting/update	NoLabel
+2	moge	meeting/update	NoLabel
+3	przesunąć	meeting/update	NoLabel
+4	to	meeting/update	NoLabel
+5	spotkanie	meeting/update	NoLabel
+
+# text: chciałbym dodać nową osobę do tego spotkania
+# intent: meeting/update
+# slots: 
+1	chciałbym	meeting/update	NoLabel
+2	dodać	meeting/update	NoLabel
+3	nową	meeting/update	NoLabel
+4	osobę	meeting/update	NoLabel
+5	do	meeting/update	NoLabel
+6	tego	meeting/update	NoLabel
+7	spotkania	meeting/update	NoLabel
+
+# text: zmień proszę godzinę tego spotkania na 17:30
+# intent: meeting/update
+# slots: 
+1	zmień	meeting/update	NoLabel
+2	proszę	meeting/update	NoLabel
+3	godzinę	meeting/update	NoLabel
+4	tego	meeting/update	NoLabel
+5	spotkania	meeting/update	NoLabel
+6	na	meeting/update	NoLabel
+7	17:30	meeting/update	B-time
+
+# text: chciałbym zapisać spotkanie
+# intent: meeting/create
+# slots: 
+1	chciałbym	meeting/create	NoLabel
+2	zapisać	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+
+# text: chciałbym dodać nowe spotkanie
+# intent: meeting/create
+# slots: 
+1	chciałbym	meeting/create	NoLabel
+2	dodać	meeting/create	NoLabel
+3	nowe	meeting/create	NoLabel
+4	spotkanie	meeting/create	NoLabel
+
+# text: proszę wpisać nowe spotkanie na ten termin: Wyjście do Kina z Tomkiem
+# intent: meeting/create
+# slots: 
+1	proszę	meeting/create	NoLabel
+2	wpisać	meeting/create	NoLabel
+3	nowe	meeting/create	NoLabel
+4	spotkanie	meeting/create	NoLabel
+5	na	meeting/create	NoLabel
+6	ten	meeting/create	NoLabel
+7	termin	meeting/create	NoLabel
+8	Wyjście	meeting/create	B-description
+9	do	meeting/create	I-description
+10	Kina	meeting/create	I-description
+11	z	meeting/create	NoLabel
+12	Tomkiem	meeting/create	B-participant
+
+# text: proszę wpisać spotkanie na piątek godzinę 9:00 Podsumowanie miesiąca salka A
+# intent: meeting/create
+# slots: 
+1	proszę	meeting/create	NoLabel
+2	wpisać	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+4	na	meeting/create	NoLabel
+5	piątek	meeting/create	B-date
+6	godzinę	meeting/create	NoLabel
+7	9:00	meeting/create	B-time
+8	Podsumowanie	meeting/create	B-description
+9	miesiąca	meeting/create	I-description
+10	salka	meeting/create	B-place
+11	A	meeting/create	I-place
+
+# text: chciałbym umówić spotkanie dzisiaj o godzinie 17.00
+# intent: meeting/create
+# slots: 
+1	chciałbym	meeting/create	NoLabel
+2	umówić	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+4	dzisiaj	meeting/create	B-date
+5	o	meeting/create	B-date
+6	godzinie	meeting/create	NoLabel
+7	17:00	meeting/create	B-time
+
+# text: zapisz mi proszę spotkanie z 3 marca o 17 wizyta u lekarza
+# intent: meeting/create
+# slots: 
+1	zapisz	meeting/create	NoLabel
+2	mi	meeting/create	NoLabel
+3	proszę	meeting/create	NoLabel
+4	spotkanie	meeting/create	NoLabel
+5	z	meeting/create	NoLabel
+6	3	meeting/create	B-date
+7	marca	meeting/create	I-date
+8	o	meeting/create	NoLabel
+9	17	meeting/create	B-time
+10	wizyta	meeting/create	B-description
+11	u	meeting/create	I-description
+12	lekarza	meeting/create	I-description
+
+# text: proszę wpisać na 02.04.2021 o godzinie 19:00 Wyjście do kina ze znajomą
+# intent: meeting/create
+# slots: 
+1	proszę	meeting/create	NoLabel
+2	wpisać	meeting/create	NoLabel
+3	na	meeting/create	NoLabel
+4	02.04.2021	meeting/create	B-date
+5	o	meeting/create	NoLabel
+6	godzinie	meeting/create	NoLabel
+7	19:00	meeting/create	B-time
+8	Wyjście	meeting/create	B-description
+9	do	meeting/create	I-description
+10	kina	meeting/create	I-description
+11	ze	meeting/create	I-description
+12	znajomą	meeting/create	I-description
+
+# text: chciałabym umówić spotkanie
+# intent: meeting/create
+# slots: 
+1	chciałabym	meeting/create	NoLabel
+2	umówić	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+
+# text: chciałabym dodać spotkanie do kalendarza
+# intent: meeting/create
+# slots: 
+1	chciałabym	meeting/create	NoLabel
+2	dodać	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+4	do	meeting/create	NoLabel
+5	kalendarza	meeting/create	NoLabel
+
+# text: proszę o dodanie spotkania biznesowego na dziś wieczór
+# intent: meeting/create
+# slots: 
+1	proszę	meeting/create	NoLabel
+2	o	meeting/create	NoLabel
+3	dodanie	meeting/create	NoLabel
+4	spotkania	meeting/create	NoLabel
+5	biznesowego	meeting/create	NoLabel
+6	na	meeting/create	NoLabel
+7	dziś	meeting/create	B-date
+8	wieczór	meeting/create	NoLabel
+
+# text: dodaj pozycję jutro na 17.30 Lunch z księgową w miejscu Cafe Teria
+# intent: meeting/create
+# slots: 
+1	dodaj	meeting/create	NoLabel
+2	pozycję	meeting/create	NoLabel
+3	jutro	meeting/create	B-date
+4	na	meeting/create	NoLabel
+5	17.30	meeting/create	B-time
+6	Lunch	meeting/create	B-description
+7	z	meeting/create	I-description
+8	księgową	meeting/create	I-description
+9	w	meeting/create	NoLabel
+10	miejscu	meeting/create	NoLabel
+11	Cafe	meeting/create	B-place
+12	Teria	meeting/create	I-place
+
+# text: chciałabym zobaczyć podsumowanie spotkań z ostatniego miesiąca
+# intent: meeting/list
+# slots: 
+1	chciałabym	meeting/list	NoLabel
+2	zobaczyć	meeting/list	NoLabel
+3	podsumowanie	meeting/list	NoLabel
+4	spotkań	meeting/list	NoLabel
+5	z	meeting/list	NoLabel
+6	ostatniego	meeting/list	B-date
+7	miesiąca	meeting/list	I-date
+
+# text: jakie mam spotkania jutro
+# intent: meeting/list
+# slots: 
+1	jakie	meeting/list	NoLabel
+2	mam	meeting/list	NoLabel
+3	spotkania	meeting/list	NoLabel
+4	jutro	meeting/list	B-date
+
+# text: proszę o rozpiskę spotkań na następny tydzień
+# intent: meeting/list
+# slots: 
+1	proszę	meeting/list	NoLabel
+2	o	meeting/list	NoLabel
+3	rozpiskę	meeting/list	NoLabel
+4	spotkań	meeting/list	NoLabel
+5	na	meeting/list	NoLabel
+6	następny	meeting/list	B-date
+7	tydzień	meeting/list	I-date
+
+# text: podaj mi proszę moje spotkania na najbliższy tydzień
+# intent: meeting/list
+# slots: 
+1	podaj	meeting/list	NoLabel
+2	mi	meeting/list	NoLabel
+3	proszę	meeting/list	NoLabel
+4	moje	meeting/list	NoLabel
+5	spotkania	meeting/list	NoLabel
+6	na	meeting/list	NoLabel
+7	najbliższy	meeting/list	B-date
+8	tydzień	meeting/list	I-date
+
+# text: jakie mam nadchodzące wydarzenia w tym tygodniu
+# intent: meeting/list
+# slots: 
+1	jakie	meeting/list	NoLabel
+2	mam	meeting/list	NoLabel
+3	nadchodzące	meeting/list	NoLabel
+4	wydarzenia	meeting/list	NoLabel
+5	w	meeting/list	NoLabel
+6	tym	meeting/list	B-date
+7	tygodniu	meeting/list	I-date
+
+# text: jakie spotkania mam w przyszłym tygodniu
+# intent: meeting/list
+# slots: 
+1	jakie	meeting/list	NoLabel
+2	spotkania	meeting/list	NoLabel
+3	mam	meeting/list	NoLabel
+4	w	meeting/list	NoLabel
+5	przyszłym	meeting/list	B-date
+6	tygodniu	meeting/list	I-date
+
+# text: Czy mam jakieś spotkania w najbliższy piątek
+# intent: meeting/list
+# slots: 
+1	Czy	meeting/list	NoLabel
+2	mam	meeting/list	NoLabel
+3	jakieś	meeting/list	NoLabel
+4	spotkania	meeting/list	NoLabel
+5	w	meeting/list	NoLabel
+6	najbliższy	meeting/list	B-date
+7	piątek	meeting/list	I-date
+
+# text: chcialbym sprawdzic czy mam jakies spotkania w najblizszym tygodniu
+# intent: meeting/list
+# slots: 
+1	chcialbym	meeting/list	NoLabel
+2	sprawdzic	meeting/list	NoLabel
+3	czy	meeting/list	NoLabel
+4	mam	meeting/list	NoLabel
+5	jakies	meeting/list	NoLabel
+6	spotkania	meeting/list	NoLabel
+7	w	meeting/list	NoLabel
+8	najblizszym	meeting/list	B-date
+9	tygodniu	meeting/list	I-date
+
+# text: proszę o wyświetlenie jutrzejszego kalendarza
+# intent: meeting/list
+# slots: 
+1	proszę	meeting/list	NoLabel
+2	o	meeting/list	NoLabel
+3	wyświetlenie	meeting/list	NoLabel
+4	jutrzejszego	meeting/list	B-date
+5	kalendarza	meeting/list	NoLabel
+
+# text: proszę o rozpiskę spotkań w tym tygodniu
+# intent: meeting/list
+# slots: 
+1	proszę	meeting/list	NoLabel
+2	o	meeting/list	NoLabel
+3	rozpiskę	meeting/list	NoLabel
+4	spotkań	meeting/list	NoLabel
+5	w	meeting/list	NoLabel
+6	tym	meeting/list	B-date
+7	tygodniu	meeting/list	I-date
+
+# text: jakie mam wolne terminy w najbliższy piątek
+# intent: meeting/free_time
+# slots: 
+1	jakie	meeting/free_time	NoLabel
+2	mam	meeting/free_time	NoLabel
+3	wolne	meeting/free_time	NoLabel
+4	terminy	meeting/free_time	NoLabel
+5	w	meeting/free_time	NoLabel
+6	najbliższy	meeting/free_time	B-date
+7	piątek	meeting/free_time	I-date
+
+# text: czy mam jutro wolne terminy
+# intent: meeting/free_time
+# slots: 
+1	czy	meeting/free_time	NoLabel
+2	mam	meeting/free_time	NoLabel
+3	jutro	meeting/free_time	B-date
+4	wolne	meeting/free_time	NoLabel
+5	terminy	meeting/free_time	B-date

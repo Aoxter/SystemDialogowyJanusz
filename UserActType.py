@@ -5,11 +5,13 @@ from enum import Enum, unique
 class UserActType(Enum):
     HELLO = 0
     BYE = 1
-    CREATE_MEETING = 2
-    CANCEL_MEETING = 3
-    CHANGE_MEETING = 4
-    MEETING_LIST = 5
-    CONFIRM = 6
-    NEGATE = 7
-    THANKYOU = 8
+    CONFIRM = 2
+    NEGATE = 3
+    THANKYOU = 4
+    INFORM = 5
+    CREATE_MEETING = 6
+    UPDATE_MEETING = 7
+    CANCEL_MEETING = 8
+    MEETING_LIST = 9
+    FREE_TIME = 10
     INVALID = -1
