@@ -11,6 +11,12 @@ class DST:
 
     def __init__(self):
         self.frameList = []
+        self.state = None
+
+    def update(self, frame):
+        self.addFrame(frame)
+        self.state = frame
+        return self.state
 
     def addFrame(self, frame):
         self.frameList.append(frame)
