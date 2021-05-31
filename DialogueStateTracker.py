@@ -39,6 +39,7 @@ class DST:
 
     def clear(self):
         self.state = None
+        self.last_system_act = None
         self.slots = {}
 
     def clear_slots(self):

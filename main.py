@@ -1,3 +1,4 @@
+from SystemActType import SystemActType
 from NaturalLanguageUnderstanding import NLU
 from NaturalLanguageGeneration import NLG
 from DialogueStateTracker import DST
@@ -20,7 +21,6 @@ if __name__ == "__main__":
         state, last_user_act, last_system_act = dst.get_dialogue_state()
         slots = dst.get_dialogue_slots()
         system_act = dp.chooseTactic()
-        dst.system_update(system_act)
         print('------ stan ------')
         print(state, last_user_act, last_system_act)
         print('------ przechowywane sloty ------')
@@ -30,7 +30,6 @@ if __name__ == "__main__":
         print('-----------------------------------')
         print('-----------------------------------')
         #text = nlg.toText(system_act)
-
-        #print(text)
-        #if system_act.isDialogFinished():
-        #    break
+        
+        if system_act.getActType() == SystemActType.BYE:
+            break
