@@ -1,3 +1,4 @@
+from os import system
 from UserActType import UserActType
 from UserAct import UserAct
 
@@ -10,16 +11,41 @@ class DST:
     """
 
     def __init__(self):
-        self.frameList = []
         self.state = None
+        self.last_user_act = None
+        self.last_system_act = None
+        self.slots = {}
 
-    def update(self, frame):
-        self.addFrame(frame)
-        self.state = frame
-        return self.state
+    def user_update(self, frame):
+        user_act = frame.getActType()
+        self.last_user_act = user_act
+        for slot in frame.getActParams():
+            if slot[0] == 'participant':
+                if 'participants' not in self.slots:
+                    self.slots['participants'] = [slot[1]]
+                else:
+                    self.slots['participants'].append(slot[1])
+            else:
+                self.slots[slot[0]] = slot[1]
+        if not self.state:
+            if user_act in [UserActType.CREATE_MEETING, UserActType.UPDATE_MEETING, UserActType.CANCEL_MEETING, UserActType.MEETING_LIST, UserActType.FREE_TIME]:
+                self.state = user_act
 
-    def addFrame(self, frame):
-        self.frameList.append(frame)
+    def system_update(self, system_act):
+        self.last_system_act = system_act
 
-    def getFrames(self):
-        return self.frameList
+    def insert_empty_slot(self, slot_name):
+        self.slots[slot_name] = None
+
+    def clear(self):
+        self.state = None
+        self.slots = {}
+
+    def clear_slots(self):
+        self.slots = {}
+
+    def get_dialogue_state(self):
+        return self.state, self.last_user_act, self.last_system_act
+
+    def get_dialogue_slots(self):
+        return self.slots

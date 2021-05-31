@@ -9,9 +9,6 @@ class ActFrame(ABC):
         self.__actType = actType
 
         if actParams != None:
-            if type(actParams) is not list:
-                raise Exception(
-                    'actParams has wrong type: expected type \'list\', got \'{}\''.format(type(actParams)))
             self.__actParams = actParams
 
     def __repr__(self):
@@ -22,9 +19,6 @@ class ActFrame(ABC):
 
 
     def setActParams(self, actParams):
-        if type(actParams) is not list:
-            raise Exception(
-                'actParams has wrong type: expected type \'list\', got \'{}\''.format(type(actParams)))
         self.__actParams = actParams
 
     def getActParams(self):
