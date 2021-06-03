@@ -9,7 +9,7 @@ if __name__ == "__main__":
     nlu = NLU()
     dst = DST()
     dp = DP(dst)
-    nlg = NLG()
+    nlg = NLG(dst)
 
     while(1):
         user_input = input("Wpisz tekst: ")
@@ -21,15 +21,18 @@ if __name__ == "__main__":
         state, last_user_act, last_system_act = dst.get_dialogue_state()
         slots = dst.get_dialogue_slots()
         system_act = dp.chooseTactic()
+
         print('------ stan ------')
         print(state, last_user_act, last_system_act)
         print('------ przechowywane sloty ------')
         print(slots)
         print('------ wybrana akcja systemu ------')
         print(system_act)
+        system_response = nlg.generateResponse(system_act)
+        print('------ wygenerowana odpowiedź systemu ------')
+        print(system_response)
         print('-----------------------------------')
         print('-----------------------------------')
-        #text = nlg.toText(system_act)
         
         if system_act.getActType() == SystemActType.BYE:
             break

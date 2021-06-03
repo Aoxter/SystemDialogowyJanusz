@@ -33,12 +33,12 @@ class DP:
                     system_act = SystemAct(SystemActType.REQUEST, ['place'])
                     self.DST.system_update(system_act)
                     return system_act
-                elif 'description' not in slots:
-                    system_act = SystemAct(SystemActType.REQUEST, ['description'])
-                    self.DST.system_update(system_act)
-                    return system_act
                 elif 'participants' not in slots:
                     system_act = SystemAct(SystemActType.REQUEST, ['participants'])
+                    self.DST.system_update(system_act)
+                    return system_act
+                elif 'description' not in slots:
+                    system_act = SystemAct(SystemActType.REQUEST, ['description'])
                     self.DST.system_update(system_act)
                     return system_act
                 else:
@@ -62,12 +62,12 @@ class DP:
                     system_act = SystemAct(SystemActType.REQUEST, ['place'])
                     self.DST.system_update(system_act)
                     return system_act
-                elif 'description' not in slots:
-                    system_act = SystemAct(SystemActType.REQUEST, ['description'])
-                    self.DST.system_update(system_act)
-                    return system_act
                 elif 'participants' not in slots:
                     system_act = SystemAct(SystemActType.REQUEST, ['participants'])
+                    self.DST.system_update(system_act)
+                    return system_act
+                elif 'description' not in slots:
+                    system_act = SystemAct(SystemActType.REQUEST, ['description'])
                     self.DST.system_update(system_act)
                     return system_act
                 else:
@@ -82,7 +82,7 @@ class DP:
                     return system_act
                 elif last_user_act == UserActType.NEGATE:
                     self.DST.clear()
-                    return SystemAct(SystemActType.REQMORE, [])
+                    return SystemAct(SystemActType.REQMORE, ['create_meeting'])
             else:
                 return SystemAct(SystemActType.NOT_UNDERSTOOD, [])
         # stan edycji spotkania
@@ -174,7 +174,7 @@ class DP:
                         return SystemAct(SystemActType.AFFIRM, ['update_meeting'])
                     elif last_user_act == UserActType.NEGATE:
                         self.DST.clear()
-                        return SystemAct(SystemActType.REQMORE, [])
+                        return SystemAct(SystemActType.REQMORE, ['meeting_to_update'])
                     self.meeting_to_update = False
                 if not self.meeting_to_update:
                     if last_user_act == UserActType.CONFIRM:
@@ -185,7 +185,7 @@ class DP:
                         return system_act
                     elif last_user_act == UserActType.NEGATE:
                         self.DST.clear()
-                        return SystemAct(SystemActType.REQMORE, [])
+                        return SystemAct(SystemActType.REQMORE, ['meeting_to_update'])
             else:
                 return SystemAct(SystemActType.NOT_UNDERSTOOD, [])
         # stan anulowania spotkania
@@ -226,14 +226,14 @@ class DP:
                     return system_act
                 elif last_user_act == UserActType.NEGATE:
                     self.DST.clear()
-                    return SystemAct(SystemActType.REQMORE, [])
+                    return SystemAct(SystemActType.REQMORE, ['cancel_meeting'])
             else:
                 return SystemAct(SystemActType.NOT_UNDERSTOOD, [])
         # stan prośby o listę spotkań
         elif dialogue_state == UserActType.MEETING_LIST:
             if last_user_act == UserActType.NEGATE:
                 self.DST.clear()
-                return SystemAct(SystemActType.REQMORE, [])
+                return SystemAct(SystemActType.REQMORE, ['meeting_list'])
             else:
                 if 'date' in slots:
                     system_act = SystemAct(SystemActType.MEETING_LIST, slots)
@@ -247,7 +247,7 @@ class DP:
         elif dialogue_state == UserActType.FREE_TIME:
             if last_user_act == UserActType.NEGATE:
                 self.DST.clear()
-                return SystemAct(SystemActType.REQMORE, [])
+                return SystemAct(SystemActType.REQMORE, ['free_time'])
             else:
                 if 'date' in slots:
                     system_act = SystemAct(SystemActType.FREE_TIME, slots)
