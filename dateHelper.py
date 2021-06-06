@@ -1,5 +1,6 @@
 from datetime import date, datetime, timedelta, time
 import re
+from typing import Generator
 
 
 # Monday - 0
@@ -9,6 +10,9 @@ import re
 # Friday - 4
 # Saturday - 5
 # Sunday -6
+
+def format_date(d):
+    return d.strftime('%d.%m.%Y')
 
 
 def get_current_date():
@@ -54,6 +58,48 @@ def get_time_from_hours_minutes(hours, minutes):
     return time(hours, minutes, 0)
 
 
+def format_time(time):
+    if re.match(r'^[0-2][0-9]$', time):
+        hours = int(time)
+        minutes = 00
+    elif re.match(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time):
+        m = re.search(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time)
+        hours = int(m.group(1))
+        minutes = int(m.group(2))
+    return get_time_from_hours_minutes(hours, minutes).strftime('%H:%M')
+
+
+def get_end_time(time):
+    if re.match(r'^([0-2][0-9]).?([0-9][0-9])?-([0-2][0-9]).?([0-9][0-9])?$', time):
+        m = re.search(
+            r'^^([0-2][0-9]).?([0-9][0-9])?-([0-2][0-9]).?([0-9][0-9])?$', time)
+
+        hours = int(m.group(3))
+        if m.group(4) is None:
+            minutes = 0
+        else:
+            minutes = int(m.group(4))
+
+        return get_time_from_hours_minutes(hours, minutes).strftime('%H:%M')
+    else:
+        # jak nie ma to zakładamy że trwa godzinę
+        if re.match(r'^[0-2][0-9]$', time):
+            hours = int(time)
+            minutes = 00
+        elif re.match(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time):
+            m = re.search(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time)
+            hours = int(m.group(1))
+            minutes = int(m.group(2))
+
+        hours += 1
+        if hours == 23:
+            hours = 24
+        elif hours == 24:
+            hours = 1
+
+        return get_time_from_hours_minutes(hours, minutes).strftime('%H:%M')
+
+
 def get_datetime_from_day(day, hours, minutes):
     current_day_of_week = get_current_day_of_week()
     input_date_of_week = get_day_of_week_number(day)
@@ -82,8 +128,8 @@ def get_date(date, time):
     if re.match(r'^[0-2][0-9]$', time):
         hours = int(time)
         minutes = 00
-    elif re.match(r'^[0-2][0-9].[0-9][0-9]$', time):
-        m = re.search(r'^([0-2][0-9]).([0-9][0-9])$', time)
+    elif re.match(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time):
+        m = re.search(r'^([0-2][0-9]).([0-9][0-9])(-)?.*$', time)
         hours = int(m.group(1))
         minutes = int(m.group(2))
 
@@ -97,6 +143,7 @@ def get_date(date, time):
 
 
 # Tests
+
 # print(get_datetime_from_day('niedziela', 22, 21))
 # print(get_datetime_from_day('niedziela', 18, 21))
 # print(get_datetime_from_day('poniedziałek', 18, 21))
@@ -106,3 +153,5 @@ def get_date(date, time):
 # print(get_date("sobota", "00:00"))
 # print(get_date("wtorek", "12:00"))
 # print(get_date("12.06.2021", "23"))
+
+# print(get_current_date())
