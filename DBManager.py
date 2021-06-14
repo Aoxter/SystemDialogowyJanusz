@@ -43,6 +43,10 @@ class calender_db:
             with open(self.db_file_path, 'r+') as f:
                 self.db = json.load(f)
 
+    def clear_db(self):
+        self.db = {}
+        self.save_db()
+
     def save_db(self):
         with open(self.db_file_path, 'w+') as f:
             json.dump(self.db, f)
@@ -72,19 +76,10 @@ class calender_db:
             self.db[format_date(date_time)] = meetings
             self.save_db()
 
-    def update_meeting(self, meeting_dict):
-        date_time = get_date(
-            meeting_dict['date'].lower(), meeting_dict['time'].lower())
 
-        if format_date(date_time) in self.db.keys():
-            meetings = self.db[format_date(date_time)]
-            for key, meeting in enumerate(meetings):
-                if format_time(meeting['time']) == format_time(meeting_dict['time'].lower()):
-                    meetings.remove(meeting)
-
-            meetings.append(meeting_dict)
-            self.db[format_date(date_time)] = meetings
-            self.save_db()
+    def update_meeting(self, old_meeting_date, old_meeting_time, new_meeting_dict):
+        self.delete_meeting(old_meeting_date, old_meeting_time)
+        self.create_meeting(new_meeting_dict)
 
     def find_meeting(self, date, time):
         if date in self.db.keys():
@@ -180,10 +175,15 @@ class calender_db:
 # Tests
 
 # db = calender_db()
-# db.create_meeting({"date": "16.06.2021", "time": "15:00",
-#                   "description": "chuj"})
+# db.clear_db()
+# db.create_meeting({"date": "16.06.2021", "time": "15:00", "description": "ciastko"})
 # db.create_meeting({"date": "14.06.2021", "time": "13:00-18:00"})
-# db.delete_meeting("16.06.2021", "15:00")
-# print(db.find_meeting("16.06.2021", "13:00-14:00"))
-# print(db.get_meetings(["16.06.2021", "14.06.2021"]))
-# print(db.is_collision("16.06.2021", "12:30-13"))
+#db.create_meeting({"date": "16.06.2021", "time": "12:00-13:00", "description": "costam"})
+#print(db.get_meetings(["16.06.2021", "14.06.2021"]))
+#db.update_meeting("16.06.2021", "12:00-13:00", {"date": "14.06.2021", "time": "11:00-12:00"})
+#print(db.get_meetings(["16.06.2021", "14.06.2021"]))
+#db.delete_meeting("16.06.2021", "15:00")
+#print(db.find_meeting("16.06.2021", "13:00-14:00"))
+#print(db.get_meetings(["16.06.2021", "14.06.2021"]))
+#print(db.is_collision("16.06.2021", "12:30-13"))
+#db.clear_db()

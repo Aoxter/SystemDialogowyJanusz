@@ -11,8 +11,9 @@ class DP:
     Wyjście: Akt systemu (rama)
     """
 
-    def __init__(self, dst):
+    def __init__(self, dst, db):
         self.DST = dst
+        self.DB = db
         self.meeting_to_update = False
 
     def chooseTactic(self) -> SystemAct:
@@ -71,6 +72,7 @@ class DP:
                     self.DST.system_update(system_act)
                     return system_act
                 else:
+                    # TODO sprawdzanie czy spotkanie nie koliduje
                     system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, slots)
                     self.DST.system_update(system_act)
                     return system_act
@@ -78,6 +80,7 @@ class DP:
                 if last_user_act == UserActType.CONFIRM:
                     system_act = SystemAct(SystemActType.AFFIRM, ['create_meeting'])
                     # implementacja wpisywanie spotkania do bazy
+                    self.DB.create_meeting(slots)
                     self.DST.clear()
                     return system_act
                 elif last_user_act == UserActType.NEGATE:
@@ -201,7 +204,10 @@ class DP:
                     return system_act
                 else:
                     # implementacja wyszukiwania odpowiedniego spotkania w bazie
-                    system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, ['meeting_to_cancel'])
+                    slots_to_delete = self.DB.find_meeting(slots['date'], slots['time'])
+                    self.DST.update_slots(slots_to_delete)
+                    #system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, ['meeting_to_cancel'])
+                    system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, slots_to_delete)
                     self.DST.system_update(system_act)
                     return system_act
             elif last_system_act.getActType() == SystemActType.REQUEST:    
@@ -215,13 +221,17 @@ class DP:
                     return system_act
                 else:
                     # implementacja wyszukiwania odpowiedniego spotkania w bazie
-                    system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, ['meeting_to_cancel'])
+                    slots_to_delete = self.DB.find_meeting(slots['date'], slots['time'])
+                    self.DST.update_slots(slots_to_delete)
+                    # system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, ['meeting_to_cancel'])
+                    system_act = SystemAct(SystemActType.CONFIRM_DOMAIN, slots_to_delete)
                     self.DST.system_update(system_act)
                     return system_act
             elif last_system_act.getActType() == SystemActType.CONFIRM_DOMAIN:
                 if last_user_act == UserActType.CONFIRM:
                     system_act = SystemAct(SystemActType.AFFIRM, ['cancel_meeting'])
                     # implementacja usuwania spotkania z bazy
+                    self.DB.delete_meeting(slots['date'], ['time'])
                     self.DST.clear()
                     return system_act
                 elif last_user_act == UserActType.NEGATE:
@@ -231,18 +241,42 @@ class DP:
                 return SystemAct(SystemActType.NOT_UNDERSTOOD, [])
         # stan prośby o listę spotkań
         elif dialogue_state == UserActType.MEETING_LIST:
-            if last_user_act == UserActType.NEGATE:
-                self.DST.clear()
-                return SystemAct(SystemActType.REQMORE, ['meeting_list'])
-            else:
-                if 'date' in slots:
-                    system_act = SystemAct(SystemActType.MEETING_LIST, slots)
-                    self.DST.clear()
-                    return system_act
-                else:
+            if not last_system_act:
+                if 'date' not in slots:
                     system_act = SystemAct(SystemActType.REQUEST, ['date'])
                     self.DST.system_update(system_act)
                     return system_act
+                else:
+                    # implementacja wyszukiwania spotkań w bazie
+                    meetings_slots = self.DB.get_meetings([slots['date']])
+                    system_act = SystemAct(SystemActType.MEETING_LIST, meetings_slots)
+                    self.DST.system_update(system_act)
+                    return system_act
+            elif last_system_act.getActType() == SystemActType.REQUEST:
+                if 'date' not in slots:
+                    system_act = SystemAct(SystemActType.REQUEST, ['date'])
+                    self.DST.system_update(system_act)
+                    return system_act
+                else:
+                    # implementacja wyszukiwania spotkań w bazie
+                    meetings_slots = self.DB.get_meetings([slots['date']])
+                    system_act = SystemAct(SystemActType.MEETING_LIST, meetings_slots)
+                    self.DST.system_update(system_act)
+                    return system_act
+            else:
+                return SystemAct(SystemActType.NOT_UNDERSTOOD, [])
+            # if last_user_act == UserActType.NEGATE:
+            #     self.DST.clear()
+            #     return SystemAct(SystemActType.REQMORE, ['meeting_list'])
+            # else:
+            #     if 'date' in slots:
+            #         system_act = SystemAct(SystemActType.MEETING_LIST, slots)
+            #         self.DST.clear()
+            #         return system_act
+            #     else:
+            #         system_act = SystemAct(SystemActType.REQUEST, ['date'])
+            #         self.DST.system_update(system_act)
+            #         return system_act
         # stan prośby o czas wolny
         elif dialogue_state == UserActType.FREE_TIME:
             if last_user_act == UserActType.NEGATE:

@@ -45,6 +45,9 @@ class DST:
     def clear_slots(self):
         self.slots = {}
 
+    def update_slots(self, slots):
+        self.slots = slots
+
     def get_dialogue_state(self):
         return self.state, self.last_user_act, self.last_system_act
 

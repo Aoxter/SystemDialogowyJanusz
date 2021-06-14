@@ -69,26 +69,24 @@ class NLG:
                     return "W jakim dniu miało się odbyć to spotkanie?"
                 if "time" in systemAct.getActParams():
                     return "W jakim czasie miało się odbyć to spotkanie?"
-            # TODO dopracować po dodaniu DB
             if systemAct.getActType() == SystemActType.CONFIRM_DOMAIN:
                 date = slots['date']
                 time = slots['time']
-                # place = slots['place']
-                # part_list = slots['participants']
-                # part = ""
-                # for p in part_list:
-                #     part += p
-                #     part += ", "
-                # part = part[:-2]
-                # desc = slots['description']
-                return f'Spotkanie:\n' \
-                       f'Dzień: {date}\nCzas: {time}'
+                place = slots['place']
+                part_list = slots['participants']
+                part = ""
+                for p in part_list:
+                    part += p
+                    part += ", "
+                part = part[:-2]
+                desc = slots['description']
+                return f'Odwołać te spotkanie?:\n' \
+                       f'Dzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}'
 
         elif dialogue_state == UserActType.MEETING_LIST:
             if systemAct.getActType() == SystemActType.REQUEST:
                 if "date" in systemAct.getActParams():
                     return "Z jakiego okresu chcesz przejrzeć spotkania?"
-            # TODO: dopracować po dodaniu DB
             if systemAct.getActType() == SystemActType.MEETING_LIST:
                 response = ""
                 for s in slots:
@@ -104,6 +102,7 @@ class NLG:
                     desc = s['description']
                     response += f'Spotkanie:\nDzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}\n'
                     response += "--------------------"
+                self.DST.clear_slots()
                 return response
 
         elif dialogue_state == UserActType.FREE_TIME:
