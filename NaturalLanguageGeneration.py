@@ -81,10 +81,13 @@ class NLG:
                 place = slots['place']
                 part_list = slots['participants']
                 part = ""
-                for p in part_list:
-                    part += p
-                    part += ", "
-                part = part[:-2]
+                if part_list is None:
+                    part = None
+                else:
+                    for p in part_list:
+                        part += p
+                        part += ", "
+                    part = part[:-2]
                 desc = slots['description']
                 return f'Odwołać te spotkanie?:\n' \
                        f'Dzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}'

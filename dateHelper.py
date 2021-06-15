@@ -124,6 +124,7 @@ def get_datetime_from_day(day, hours, minutes):
 
 
 def get_date(date, time):
+    print("test\ndate: ", date, "\ntime: ", time)
     # parsowanie czasu
     if re.match(r'^[0-2][0-9]$', time):
         hours = int(time)

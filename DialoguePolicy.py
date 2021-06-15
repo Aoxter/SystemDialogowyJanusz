@@ -231,7 +231,7 @@ class DP:
                 if last_user_act == UserActType.CONFIRM:
                     system_act = SystemAct(SystemActType.AFFIRM, ['cancel_meeting'])
                     # implementacja usuwania spotkania z bazy
-                    self.DB.delete_meeting(slots['date'], ['time'])
+                    self.DB.delete_meeting(slots['date'], slots['time'])
                     self.DST.clear()
                     return system_act
                 elif last_user_act == UserActType.NEGATE:
