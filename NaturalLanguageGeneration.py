@@ -13,7 +13,7 @@ class NLG:
         self.DST = dst
 
     def generateResponse(self, systemAct: SystemAct) -> str:
-        dialogue_state, last_user_act, _ = self.DST.get_dialogue_state()
+        dialogue_state, _, last_system_act = self.DST.get_dialogue_state()
         slots = self.DST.get_dialogue_slots()
         if dialogue_state == UserActType.CREATE_MEETING:
             if systemAct.getActType() == SystemActType.REQUEST:
@@ -33,10 +33,13 @@ class NLG:
                 place = slots['place']
                 part_list = slots['participants']
                 part = ""
-                for p in part_list:
-                    part += p
-                    part += ", "
-                part = part[:-2]
+                if part_list is None:
+                    part = None
+                else:
+                    for p in part_list:
+                        part += p
+                        part += ", "
+                    part = part[:-2]
                 desc = slots['description']
                 return f'Czy mam dodać te spotkanie do kalendarza?\n' \
                        f'Dzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}'
@@ -55,10 +58,13 @@ class NLG:
                 place = slots['place']
                 part_list = slots['participants']
                 part = ""
-                for p in part_list:
-                    part += p
-                    part += ", "
-                part = part[:-2]
+                if part_list is None:
+                    part = None
+                else:
+                    for p in part_list:
+                        part += p
+                        part += ", "
+                    part = part[:-2]
                 desc = slots['description']
                 return f'Spotkanie:\n' \
                        f'Dzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}'
@@ -89,18 +95,21 @@ class NLG:
                     return "Z jakiego okresu chcesz przejrzeć spotkania?"
             if systemAct.getActType() == SystemActType.MEETING_LIST:
                 response = ""
-                for s in slots:
+                for s in last_system_act.getActParams():
                     date = s['date']
                     time = s['time']
                     place = s['place']
                     part_list = s['participants']
                     part = ""
-                    for p in part_list:
-                        part += p
-                        part += ", "
-                    part = part[:-2]
+                    if part_list is None:
+                        part = None
+                    else:
+                        for p in part_list:
+                            part += p
+                            part += ", "
+                        part = part[:-2]
                     desc = s['description']
-                    response += f'Spotkanie:\nDzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}\n'
+                    response += f'\nSpotkanie:\nDzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}\n'
                     response += "--------------------"
                 self.DST.clear_slots()
                 return response
