@@ -46,6 +46,11 @@ class NLG:
 
         # TODO: nie sprawdzone - trudno wejść do tego stanu
         elif dialogue_state == UserActType.UPDATE_MEETING:
+            # TODO zaślepka do wywalenia
+            response = "Przepraszam ale obecnie nie obsługuje jeszcze tej funkcji :("
+            self.DST.clear()
+            return response
+            # -------------------------------------
             if systemAct.getActType() == SystemActType.REQUEST:
                 if "date" in systemAct.getActParams():
                     return "W jakim dniu miało się odbyć to spotkanie?"
@@ -118,6 +123,11 @@ class NLG:
                 return response
 
         elif dialogue_state == UserActType.FREE_TIME:
+            # TODO zaślepka do wywalenia
+            response = "Przepraszam ale obecnie nie obsługuje jeszcze tej funkcji :("
+            self.DST.clear()
+            return response
+            #-------------------------------------
             if systemAct.getActType() == SystemActType.REQUEST:
                 if "date" in systemAct.getActParams():
                     return "W jakim okresie chcesz znaleźć wolny czas?"
