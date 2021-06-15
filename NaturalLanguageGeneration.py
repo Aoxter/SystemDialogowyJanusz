@@ -111,7 +111,7 @@ class NLG:
                     desc = s['description']
                     response += f'\nSpotkanie:\nDzień: {date}\nCzas: {time}\nMiejsce: {place}\nUczestnicy: {part}\nOpis: {desc}\n'
                     response += "--------------------"
-                self.DST.clear_slots()
+                self.DST.clear()
                 return response
 
         elif dialogue_state == UserActType.FREE_TIME:
