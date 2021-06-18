@@ -20,7 +20,7 @@ if __name__ == "__main__":
         dst.user_update(user_frame)
         state, last_user_act, last_system_act = dst.get_dialogue_state()
         slots = dst.get_dialogue_slots()
-        system_act = dp.chooseTactic()
+        system_act = dp.choose_tactic()
 
         print('------ stan ------')
         print(state, last_user_act, last_system_act)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         print(slots)
         print('------ wybrana akcja systemu ------')
         print(system_act)
-        system_response = nlg.generateResponse(system_act)
+        system_response = nlg.generate_response(system_act)
         print('------ wygenerowana odpowiedź systemu ------')
         print(system_response)
         print('-----------------------------------')

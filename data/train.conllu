@@ -23,7 +23,7 @@
 # text: cześć
 # intent: hello 
 # slots: 
-1	siema	hello	NoLabel
+1	cześć	hello	NoLabel
 
 # text: do widzenia
 # intent: bye 
@@ -484,6 +484,18 @@
 7	prac	inform/description	I-description
 8	projektowych	inform/description	I-description
 
+# text: Proszę jako opis dodać spotkanie dotyczące zakupu firmy
+# intent: inform/description 
+# slots: 
+1	Proszę	inform/description	NoLabel
+2	jako	inform/description	NoLabel
+3	opis	inform/description	NoLabel
+4	dodać	inform/description	NoLabel
+5	spotkanie	inform/description	B-description
+6	dotyczące	inform/description	I-description
+7	zakupu	inform/description	I-description
+8	firmy	inform/description	I-description
+
 # text: Spotkanie będzie dotyczyło omówienia strategii biznesowej
 # intent: inform/description 
 # slots: 
@@ -641,6 +653,22 @@
 10	salka	meeting/create	B-place
 11	A	meeting/create	I-place
 
+# text: proszę ustawić spotkanie z Jan Nowak 24 grudnia 2022 o godzinie 21.30
+# intent: meeting/create
+# slots: 
+1	proszę	meeting/create	NoLabel
+2	ustawić	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
+4	z	meeting/create	NoLabel
+5	Jan	meeting/create	B-participant
+6	Nowak	meeting/create	I-participant
+7	24	meeting/create	B-date
+8	grudnia	meeting/create	I-date
+9	2022	meeting/create	I-date
+10	o	meeting/create	NoLabel
+11	godzinie	meeting/create	NoLabel
+11	21.30	meeting/create	B-time
+
 # text: chciałbym umówić spotkanie dzisiaj o godzinie 17.00
 # intent: meeting/create
 # slots: 
@@ -650,7 +678,7 @@
 4	dzisiaj	meeting/create	B-date
 5	o	meeting/create	B-date
 6	godzinie	meeting/create	NoLabel
-7	17:00	meeting/create	B-time
+7	17.00	meeting/create	B-time
 
 # text: zapisz mi proszę spotkanie z 3 marca o 17 wizyta u lekarza
 # intent: meeting/create
