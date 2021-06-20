@@ -16,7 +16,8 @@ Ankieta zadowolenia użytkownika poruszała kilka kwestii, takich jak:
 * 2 pytania opisowe, co wg. użytkownika działa w systemie najlepiej i najgorzej
 * czy użytkownik zamierza używać systemu w przyszłości w skali 1-5
 * ogólna ocena systemu w skali 1-5
-#### Udało się zebrać odpowiedzi dotyczące 10 przeprowadzonych rozmów.
+<!-- end of the list -->
+Udało się zebrać odpowiedzi dotyczące 10 przeprowadzonych rozmów.
 
 ### Pytanie 1: Główne zadanie użytkownika.
 * 8 użytkowników wskazało jako główny cel <b>umówienie spotkania</b>
@@ -26,7 +27,8 @@ Ankieta zadowolenia użytkownika poruszała kilka kwestii, takich jak:
 ### Pytanie 2: Czy udało się zrealizować główne zadanie?
 * 7 użytkowników odpowiedziało <b>tak</b>
 * 3 użytkowników odpowiedziało <b>nie</b>
-#### Wszyscy użytkownicy, którym udało się zrealizować główne zadanie chcieli utworzyć spotkanie. Można więc wysnuć wniosek, że to element systemu, który działa najlepiej i jednocześnie najpopularniejszy wśród użytkowników. Co za tym idzie system można nazwać dość skutecznym, jednak nie radzi sobie w pełni ze wszystkimi planowanymi zadaniami.
+<!-- end of the list -->
+Wszyscy użytkownicy, którym udało się zrealizować główne zadanie chcieli utworzyć spotkanie. Można więc wysnuć wniosek, że to element systemu, który działa najlepiej i jednocześnie najpopularniejszy wśród użytkowników. Co za tym idzie system można nazwać dość skutecznym, jednak nie radzi sobie w pełni ze wszystkimi planowanymi zadaniami.
 
 ### Pytanie 3: Łatwość realizacji zadania.
 Średnia ocena tej metryki to 3.5/5 <br>
@@ -60,8 +62,9 @@ Najniższe oceny (2 oraz 3) dotyczyły rozmów, w których nie doszło do pomyś
 
 ### Pytanie 9: Czy krytyczny błąd systemu przerwał rozmowę?
 * 7 użytkowników odpowiedziało <b>tak</b>
-* 3 użytkowników odpowiedziało <b>nie</b>
-#### Najbardziej niepokojąca metryka w ankiecie. Aż 70% rozmów skończyło się krytycznym błędem systemu, jednak w większości przypadków nie wpłynęło to na realizację głównego zadania użytkownika. Z pewnością trzebaby się skupić w przyszłości na wyeliminowaniu tych błędów.
+* 3 użytkowników odpowiedziało <b>nie</b> 
+<!-- end of the list -->
+Najbardziej niepokojąca metryka w ankiecie. Aż 70% rozmów skończyło się krytycznym błędem systemu, jednak w większości przypadków nie wpłynęło to na realizację głównego zadania użytkownika. Z pewnością trzebaby się skupić w przyszłości na wyeliminowaniu tych błędów.
 
 ### Pytanie 10: Co w systemie działało nagorzej (nieobowiązkowe pytanie opisowe)?
 Najczęściej wskazywanymi mankamentami systemu były błędne przechwytywanie slotów, co często prowadziło do ponownego zadania tego samego pytania oraz nieoczekiwane zakończenie konwersacji błędem krytycznym. Aż 7 użytkowników zdecydowało się odpowiedzieć na to pytanie, co najprawdopodobniej oznacza, że system dalej posiada niewielkie błędy wpływające na jego jakość. 
