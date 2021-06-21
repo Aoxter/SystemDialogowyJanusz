@@ -1,0 +1,66 @@
+- Chciałbym zarezerwować spotkanie na dzień jutrzejszy na placu X
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['time']
+
+------ wygenerowana odpowiedź systemu ------
+W jakim czasie ma się odbyć to spotkanie?
+
+- 11:25
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['place']
+
+------ wygenerowana odpowiedź systemu ------
+Gdzie ma się odbyć to spotkanie?
+
+- na placu X
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['place']
+
+------ wygenerowana odpowiedź systemu ------
+Gdzie ma się odbyć to spotkanie?
+
+- Plac X
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['participants']
+
+------ wygenerowana odpowiedź systemu ------
+Kto ma wziąć udział w spotkaniu?
+
+- Ja i koleżanka Y
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['participants']
+
+------ wygenerowana odpowiedź systemu ------
+Kto ma wziąć udział w spotkaniu?
+
+# Znowu się zapętlił więc wpisałem "Agnieszka" żeby przejść dalej
+
+------ wybrana akcja systemu ------
+actType:SystemActType.CONFIRM_DOMAIN actParams:{'date': 'jutrzejszy', 'time': '11:25', 'place': 'Plac X', 'description': 'Y', 'participants': ['Agnieszka']}
+
+------ wygenerowana odpowiedź systemu ------
+Czy mam dodać te spotkanie do kalendarza?
+Dzień: jutrzejszy
+Czas: 11:25
+Miejsce: Plac X
+Uczestnicy: Ja # Tu zmiana była
+Opis: Y
+
+Traceback (most recent call last):
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\main.py", line 25, in <module>
+    system_act = dp.chooseTactic()
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\DialoguePolicy.py", line 83, in chooseTactic
+    self.DB.create_meeting(slots)
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\DBManager.py", line 56, in create_meeting
+    date_time = get_date(
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\dateHelper.py", line 143, in get_date
+    return get_datetime_from_day(date, hours, minutes)
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\dateHelper.py", line 122, in get_datetime_from_day
+    date = get_current_date() + timedelta(days=(7 - abs(current_day_of_week-input_date_of_week)))
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+PS C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe> 

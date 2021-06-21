@@ -1,0 +1,118 @@
+- Jakie mam w tym tygodniu spotkania?
+
+------ rozpoznany user frame ------
+meeting_list(date='tym tygodniu')
+------ stan ------
+UserActType.MEETING_LIST UserActType.MEETING_LIST None
+------ przechowywane sloty ------
+{'date': 'tym tygodniu'}
+------ wybrana akcja systemu ------
+actType:SystemActType.MEETING_LIST actParams:{'date': 'tym tygodniu'}
+Traceback (most recent call last):
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\main.py", line 31, in <module>
+    system_response = nlg.generateResponse(system_act)
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\NaturalLanguageGeneration.py", line 154, in generateResponse    raise Exception("SystemAct:{} not recognized".format(systemAct))
+Exception: SystemAct:actType:SystemActType.MEETING_LIST actParams:{'date': 'tym tygodniu'} not recognized
+
+- Dodaj spotkanie we wtorek
+------ rozpoznany user frame ------
+create_meeting(date='wtorek')
+------ stan ------
+UserActType.CREATE_MEETING UserActType.CREATE_MEETING None
+------ przechowywane sloty ------
+{'date': 'wtorek'}
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['time']
+------ wygenerowana odpowiedź systemu ------
+W jakim czasie ma się odbyć to spotkanie?
+-----------------------------------
+-----------------------------------
+
+- o godzinie dziesiątej
+------ rozpoznany user frame ------
+inform()
+------ stan ------
+UserActType.CREATE_MEETING UserActType.INFORM actType:SystemActType.REQUEST actParams:['time']
+------ przechowywane sloty ------
+{'date': 'wtorek'}
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['time']
+------ wygenerowana odpowiedź systemu ------
+W jakim czasie ma się odbyć to spotkanie?
+-----------------------------------
+-----------------------------------
+
+- Spotkanie ma się rozpocząć o dziesiątej # tu też nie wyłapało więc dałem 10
+------ rozpoznany user frame ------
+inform(time='10')
+------ stan ------
+UserActType.CREATE_MEETING UserActType.INFORM actType:SystemActType.REQUEST actParams:['time']
+------ przechowywane sloty ------
+{'date': 'wtorek', 'time': '10'}
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['place']
+------ wygenerowana odpowiedź systemu ------
+Gdzie ma się odbyć to spotkanie?
+-----------------------------------
+-----------------------------------
+
+- Spotkanie online 
+------ rozpoznany user frame ------
+inform(description='Online')
+------ stan ------
+UserActType.CREATE_MEETING UserActType.INFORM actType:SystemActType.REQUEST actParams:['place']
+------ przechowywane sloty ------
+{'date': 'wtorek', 'time': '10', 'description': 'Online'}
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['place']
+------ wygenerowana odpowiedź systemu ------
+Gdzie ma się odbyć to spotkanie?
+-----------------------------------
+-----------------------------------
+
+- w internecie # zmieniłem na "restauracja internet" żeby przejść dalej 
+------ rozpoznany user frame ------
+inform(description='Online')
+------ stan ------
+UserActType.CREATE_MEETING UserActType.INFORM actType:SystemActType.REQUEST actParams:['participants']
+------ przechowywane sloty ------
+{'date': 'wtorek', 'time': '10', 'description': 'Online', 'place': 'restauracja internet'}
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['participants']
+------ wygenerowana odpowiedź systemu ------
+Kto ma wziąć udział w spotkaniu?
+-----------------------------------
+-----------------------------------
+
+- ja # zmieniłem na agnieszka żeby przejść dalej 
+
+inform(participant='Agnieszka')
+------ stan ------
+UserActType.CREATE_MEETING UserActType.INFORM actType:SystemActType.REQUEST actParams:['participants']
+------ przechowywane sloty ------
+{'date': 'wtorek', 'time': '10', 'description': 'Online', 'place': 'restauracja internet', 'participants': ['Agnieszka']}
+------ wybrana akcja systemu ------
+actType:SystemActType.CONFIRM_DOMAIN actParams:{'date': 'wtorek', 'time': '10', 'description': 'Online', 'place': 'restauracja internet', 'participants': ['Agnieszka']}
+------ wygenerowana odpowiedź systemu ------
+Czy mam dodać te spotkanie do kalendarza?
+Dzień: wtorek
+Czas: 10
+Miejsce: restauracja internet
+Uczestnicy: Agnieszka
+Opis: Online
+-----------------------------------
+-----------------------------------
+
+- Tak
+------ rozpoznany user frame ------
+confirm()
+------ stan ------
+UserActType.CREATE_MEETING UserActType.CONFIRM actType:SystemActType.CONFIRM_DOMAIN actParams:{'date': 'wtorek', 'time': '10', 'description': 'Online', 'place': 'restauracja internet', 'participants': ['Agnieszka']}
+------ przechowywane sloty ------
+{'date': 'wtorek', 'time': '10', 'description': 'Online', 'place': 'restauracja internet', 'participants': ['Agnieszka']}
+------ wybrana akcja systemu ------
+actType:SystemActType.AFFIRM actParams:['create_meeting']
+------ wygenerowana odpowiedź systemu ------
+Spotkanie zostało dodane
+-----------------------------------
+-----------------------------------

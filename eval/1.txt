@@ -1,0 +1,65 @@
+- Dzień dobry!
+
+------ wybrana akcja systemu ------
+actType:SystemActType.WELCOME_MSG actParams:[]
+
+------ wygenerowana odpowiedź systemu ------
+Cześć
+
+- Czy możesz mi powiedzieć jakie mam plany na 20 czerwca?
+
+------ wybrana akcja systemu ------
+actType:SystemActType.MEETING_LIST actParams:[]
+
+------ wygenerowana odpowiedź systemu ------
+$("Brak spotkań")
+
+- Fantastycznie! Czy możesz mi zapisać spotkanie na 19 z Agusią na Starym Rynku?
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['date']
+
+------ wygenerowana odpowiedź systemu ------
+W jakim dniu ma się odbyć to spotkanie?
+
+- 20 czerwca
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['place']
+
+------ wygenerowana odpowiedź systemu ------
+Gdzie ma się odbyć to spotkanie?
+
+- Nie złapał "na starym rynku w poznaniu" więc wpisałem "Stary rynek"
+
+------ wybrana akcja systemu ------
+actType:SystemActType.REQUEST actParams:['participants']
+
+------ wygenerowana odpowiedź systemu ------
+Kto ma wziąć udział w spotkaniu?
+
+# Tu też nie wyłapał "ja i Aga" więc wpisałem "Agnieszka"
+
+------ wybrana akcja systemu ------
+actType:SystemActType.CONFIRM_DOMAIN actParams:{'time': '19', 'description': 'Agusią', 'date': '20 czerwca', 'place': 'Z', 'participants': ['Agnieszka']}
+
+------ wygenerowana odpowiedź systemu ------
+Czy mam dodać te spotkanie do kalendarza?
+Dzień: 20 czerwca
+Czas: 19
+Miejsce: Z
+Uczestnicy: Agnieszka
+Opis: Agusią
+
+Traceback (most recent call last):
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\main.py", line 25, in <module>
+    system_act = dp.chooseTactic()
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\DialoguePolicy.py", line 83, in chooseTactic
+    self.DB.create_meeting(slots)
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\DBManager.py", line 56, in create_meeting
+    date_time = get_date(
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\dateHelper.py", line 143, in get_date
+    return get_datetime_from_day(date, hours, minutes)
+  File "C:\Users\masob\Desktop\STUDIA\SYSTEMY DIALOGOWE\SystemyDialogowe\dateHelper.py", line 122, in get_datetime_from_day
+    date = get_current_date() + timedelta(days=(7 - abs(current_day_of_week-input_date_of_week)))
+TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+
