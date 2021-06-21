@@ -19,7 +19,6 @@ class NLG:
 
     def generate_response(self, systemAct: SystemAct) -> str:
         dialogue_state, _, _ = self.DST.get_dialogue_state()
-        print(f'Stacja dialogowa: {dialogue_state}')
         if dialogue_state == UserActType.CREATE_MEETING:
             if systemAct.getActType() == SystemActType.REQUEST:
                 if 'date' in systemAct.getActParams():

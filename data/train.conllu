@@ -25,6 +25,12 @@
 # slots: 
 1	cześć	hello	NoLabel
 
+# text: cześć elo
+# intent: hello 
+# slots: 
+1	cześć	hello	NoLabel
+2	elo	hello	NoLabel
+
 # text: do widzenia
 # intent: bye 
 # slots: 
@@ -57,7 +63,7 @@
 2	takim	bye	NoLabel
 3	razie	bye	NoLabel
 4	to	bye	NoLabel
-1	wszystko	bye	NoLabel
+5	wszystko	bye	NoLabel
 
 # text: potwierdzam
 # intent: confirm 
@@ -97,6 +103,23 @@
 # intent: negate 
 # slots: 
 1	nie	negate	NoLabel
+
+# text: nie usuwaj tego spotkania
+# intent: negate 
+# slots: 
+1	nie	negate	NoLabel
+2	usuwaj	negate	NoLabel
+3	tego	negate	NoLabel
+4	spotkania	negate	NoLabel
+
+# text: jednak nie zmieniaj tego spotkania
+# intent: negate 
+# slots: 
+1	jednak	negate	NoLabel
+2	nie	negate	NoLabel
+3	zmieniaj	negate	NoLabel
+4	tego	negate	NoLabel
+5	spotkania	negate	NoLabel
 
 # text: bez
 # intent: negate 
@@ -146,6 +169,13 @@
 1	28	inform/date	B-date
 2	lutego	inform/date	I-date
 
+# text: 25 września 2022
+# intent: inform/date 
+# slots: 
+1	25	inform/date	B-date
+2	września	inform/date	I-date
+3	2022	inform/date	I-date
+
 # text: spotkanie odbędzie się 3 maja
 # intent: inform/date 
 # slots:
@@ -154,6 +184,16 @@
 3	się	inform/date	NoLabel
 4	3	inform/date	B-date
 5	maja	inform/date	I-date
+
+# text: spotkanie odbędzie się 4 marca 2023
+# intent: inform/date 
+# slots:
+1	spotkanie	inform/date	NoLabel
+2	odbędzie	inform/date	NoLabel
+3	się	inform/date	NoLabel
+4	4	inform/date	B-date
+5	marca	inform/date	I-date
+6	2023	inform/date	I-date
 
 # text: spotkanie w piątek
 # intent: inform/date 
@@ -192,8 +232,8 @@
 # intent: inform/date 
 # slots: 
 1	data	inform/date	NoLabel
-1	to	inform/date	NoLabel
-1	11.11.2011	inform/date	B-date
+2	to	inform/date	NoLabel
+3	11.11.2011	inform/date	B-date
 
 # text: spotkanie odbędzie się pojutrze
 # intent: inform/date 
@@ -217,10 +257,10 @@
 1	ustaw	inform/date	NoLabel
 2	datę	inform/date	NoLabel
 3	tego	inform/date	NoLabel
-3	spotkania	inform/date	NoLabel
-3	na	inform/date	NoLabel
-3	najbliższy	inform/date	B-date
-3	poniedziałek	inform/date	I-date
+4	spotkania	inform/date	NoLabel
+5	na	inform/date	NoLabel
+6	najbliższy	inform/date	B-date
+7	poniedziałek	inform/date	I-date
 
 # text: spotkanie będzie o godzinie 19:30
 # intent: inform/time 
@@ -606,6 +646,13 @@
 5	spotkania	meeting/update	NoLabel
 6	na	meeting/update	NoLabel
 7	17:30	meeting/update	B-time
+
+# text: chciałbym utworzyć spotkanie
+# intent: meeting/create
+# slots: 
+1	chciałbym	meeting/create	NoLabel
+2	utworzyć	meeting/create	NoLabel
+3	spotkanie	meeting/create	NoLabel
 
 # text: chciałbym zapisać spotkanie
 # intent: meeting/create
