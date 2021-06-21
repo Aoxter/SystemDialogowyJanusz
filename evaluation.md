@@ -64,7 +64,7 @@ Najniższe oceny (2 oraz 3) dotyczyły rozmów, w których nie doszło do pomyś
 * 7 użytkowników odpowiedziało <b>tak</b>
 * 3 użytkowników odpowiedziało <b>nie</b> 
 <!-- end of the list -->
-Najbardziej niepokojąca metryka w ankiecie. Aż 70% rozmów skończyło się krytycznym błędem systemu, jednak w większości przypadków nie wpłynęło to na realizację głównego zadania użytkownika. Z pewnością trzebaby się skupić w przyszłości na wyeliminowaniu tych błędów.
+Najbardziej niepokojąca metryka w ankiecie. Aż 70% rozmów skończyło się krytycznym błędem systemu, jednak w większości przypadków nie wpłynęło to na realizację głównego zadania użytkownika. Z pewnością trzeba się skupić w przyszłości na wyeliminowaniu tych błędów.
 
 ### Pytanie 10: Co w systemie działało nagorzej (nieobowiązkowe pytanie opisowe)?
 Najczęściej wskazywanymi mankamentami systemu były błędne przechwytywanie slotów, co często prowadziło do ponownego zadania tego samego pytania oraz nieoczekiwane zakończenie konwersacji błędem krytycznym. Aż 7 użytkowników zdecydowało się odpowiedzieć na to pytanie, co najprawdopodobniej oznacza, że system dalej posiada niewielkie błędy wpływające na jego jakość. 
@@ -82,3 +82,13 @@ Większość użytkowników nie ma wyrobionego zdania na temat przydatności sys
 Średnia ocena tej metryki to 3.9/5 <br>
 Najczęstsza ocena to <b>4</b> (5 użytkowników). <br>
 Ogólnie system wypada dość dobrze. Najniższe oceny dotyczyły rozmów, podczas których nie udało się zrealizować zadania oraz system zakończył niespodziewanie rozmowe przez błąd. Można więc wysnuć wniosek, że wyeliminowanie tych błędów i poprawa skuteczności podniosłaby ogólną ocenę systemu.
+
+## Inne metryki ewaluacyjne.
+### Task success rate:
+System poprawnie zrealizował 9 zadań z 16 możliwych, co daje <b>56,25%</b> skuteczności. <br>
+Tą skuteczność można uznać za dość dobrą, jednak na pewno trzeba by ją zwiększyć w toku dalszych prac nad systemem. <br>
+Głownym elementem systemu, który powodował niepomyślną realizację zadań był moduł NLU (głównie błędne wyłapywanie wartości slotów) oraz moduł NLG (system nie generował odpowiedzi przy niektórych nieprzewidzianych scenariuszach).
+
+### Slot error rate:
+System poprawnie wyłapał 23 wartości slotu na 55 przypadków, co daje <b>41,81%</b> skuteczności. <br>
+System przede wszystkim miał problem ze slotem <b>opis spotkania</b> oraz <b>uczestnik spotkania</b>. Dość sprawnie wyłapuje slot <b>data</b> oraz <b>godzina</b>.
